@@ -1,0 +1,2622 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GridViewExtensions</name>
+    </assembly>
+    <members>
+        <member name="T:GridViewExtensions.IGridFilter">
+            <summary>
+            Interface which is used to provide different filter methods 
+            and GUI elements for filtering in the <see cref="T:GridViewExtensions.FilterableDataGrid"/>.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.IGridFilter.GetFilter(System.String)">
+            <summary>
+            Gets a string representing the current filter.
+            This must be a valid expression understandable by the 
+            <see cref="T:System.Data.DataView"/> class's property <see cref="P:System.Data.DataView.RowFilter"/>.
+            </summary>
+            <param name="columnName">
+            The name of the column for which the criteria should be generated.
+            </param>
+            <returns>a string representing the current filter criteria</returns>
+        </member>
+        <member name="M:GridViewExtensions.IGridFilter.SetFilter(System.String)">
+            <summary>
+            Sets a string which a a previous result of <see cref="M:GridViewExtensions.IGridFilter.GetFilter(System.String)"/>
+            in order to configure the <see cref="P:GridViewExtensions.IGridFilter.FilterControl"/> to match the
+            given filter criteria.
+            </summary>
+            <param name="filter">filter criteria</param>
+            <returns></returns>
+        </member>
+        <member name="M:GridViewExtensions.IGridFilter.Clear">
+            <summary>
+            Clears the filter to its initial state.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.IGridFilter.Changed">
+            <summary>
+            Event for notification that the filter criteria for this
+            instance has changed.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.IGridFilter.FilterControl">
+            <summary>
+            The control which contains the GUI elements for the filter
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.IGridFilter.HasFilter">
+            <summary>
+            Gets whether a filter is currently set
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.IGridFilter.UseCustomFilterPlacement">
+            <summary>
+            Specifies whether the control is placed automatically or not.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilters.NullGridFilter">
+            <summary>
+            A <see cref="T:GridViewExtensions.IGridFilter"/> implementation for filtering columns
+            with a <see cref="T:System.Windows.Forms.CheckBox"/> to control the filter.
+            It allows three states: 
+            In intermediate state no filter will be set.
+            In checked state the filter will show only values which are not null.
+            In unchecked state the filter will only show values which are null.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilters.GridFilterBase">
+            <summary>
+            Base class for easier <see cref="T:GridViewExtensions.IGridFilter"/> implementation.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.GridFilterBase.#ctor(System.Boolean)">
+            <summary>
+            Base constructor.
+            </summary>
+            <param name="useCustomFilterPlacement">False, if the filter control should be
+            placed within the grid, otherwise true.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.GridFilterBase.GetFilter(System.String)">
+            <summary>
+            Gets a string representing the current filter.
+            This must be a valid expression understandable by the 
+            <see cref="T:System.Data.DataView"/> class's property <see cref="P:System.Data.DataView.RowFilter"/>.
+            </summary>
+            <param name="columnName">
+            The name of the column for which the criteria should be generated.
+            </param>
+            <returns>a string representing the current filter criteria</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.GridFilterBase.SetFilter(System.String)">
+            <summary>
+            Sets a string which a a previous result of <see cref="M:GridViewExtensions.GridFilters.GridFilterBase.GetFilter(System.String)"/>
+            in order to configure the <see cref="P:GridViewExtensions.GridFilters.GridFilterBase.FilterControl"/> to match the
+            given filter criteria.
+            </summary>
+            <param name="filter">filter criteria</param>
+            <returns></returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.GridFilterBase.Clear">
+            <summary>
+            Clears the filter to its initial state.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.GridFilterBase.OnChanged">
+            <summary>
+            Fires the <see cref="E:GridViewExtensions.GridFilters.GridFilterBase.Changed"/> event.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.GridFilterBase.Dispose">
+            <summary>
+            Frees the resources of this instance.
+            Not needed in the base implementation but probably a good thing
+            in deriving classes.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.GridFilters.GridFilterBase.Changed">
+            <summary>
+            Event for notification that the filter criteria for this
+            instance has changed.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.GridFilterBase.FilterControl">
+            <summary>
+            The control which contains the GUI elements for the filter
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.GridFilterBase.UseCustomFilterPlacement">
+            <summary>
+            Specifies whether the control is placed automatically or not.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.GridFilterBase.HasFilter">
+            <summary>
+            Gets whether a filter is currently set
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NullGridFilter.#ctor">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NullGridFilter.#ctor(System.Windows.Forms.CheckBox)">
+            <summary>
+            Creates a new instance with <see cref="P:GridViewExtensions.GridFilters.GridFilterBase.UseCustomFilterPlacement"/>
+            set to true.
+            </summary>
+            <param name="checkBox">A <see cref="T:System.Windows.Forms.CheckBox"/> instance which
+            should be used by the filter.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NullGridFilter.GetFilter(System.String)">
+            <summary>
+            Gets a simple boolean filter criteria in string representation
+            </summary>
+            <param name="columnName">
+            The name of the column for which the criteria should be generated.
+            </param>
+            <returns>a string representing the current filter criteria</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NullGridFilter.SetFilter(System.String)">
+            <summary>
+            Sets a string which a a previous result of <see cref="M:GridViewExtensions.GridFilters.NullGridFilter.GetFilter(System.String)"/>
+            in order to configure the <see cref="P:GridViewExtensions.GridFilters.NullGridFilter.FilterControl"/> to match the
+            given filter criteria.
+            </summary>
+            <param name="filter">filter criteria</param>
+            <returns></returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NullGridFilter.Clear">
+            <summary>
+            Clears the filter to its initial state.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NullGridFilter.Dispose">
+            <summary>
+            Cleans up
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.NullGridFilter.CheckState">
+            <summary>
+            Gets or sets the current state of the contained <see cref="T:System.Windows.Forms.CheckBox"/>.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.NullGridFilter.FilterControl">
+            <summary>
+            The <see cref="T:System.Windows.Forms.CheckBox"/> for the GUI.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.NullGridFilter.HasFilter">
+            <summary>
+            Gets whether a filter is set.
+            True, if the <see cref="T:System.Windows.Forms.CheckBox"/> is not intermediate.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilters.EnumerationSources.IntStringMapEnumerationSource">
+            <summary>
+            <see cref="T:GridViewExtensions.GridFilters.EnumerationSources.IEnumerationSource"/> implementation which supports userdefined
+            matching between <see cref="T:System.Int32"/> values in the datasource and <see cref="T:System.String"/>
+            values which should be displayed in the filter.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilters.EnumerationSources.IEnumerationSource">
+            <summary>
+            Interface defining a data source for the <see cref="T:GridViewExtensions.GridFilters.EnumerationGridFilter"/>.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationSources.IEnumerationSource.GetFilterFromValue(System.Object)">
+            <summary>
+            Build the filter criteria from the given input.
+            </summary>
+            <param name="value">The selected value for which the criteria is created.</param>
+            <returns>A <see cref="T:System.String"/> representing the criteria.</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationSources.IEnumerationSource.GetValueFromFilter(System.String)">
+            <summary>
+            Gets the object value for a specified filter.
+            </summary>
+            <param name="filter">The filter value to be searched</param>
+            <returns>object value for the specified filter</returns>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.EnumerationSources.IEnumerationSource.AllValues">
+            <summary>
+            Gets all values which should be displayed.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationSources.IntStringMapEnumerationSource.#ctor">
+            <summary>
+            Creates a new instance with no mapping.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationSources.IntStringMapEnumerationSource.#ctor(System.Int32[],System.String[])">
+            <summary>
+            Creates a new instance mapping the given <see cref="T:System.Int32"/> values to
+            the given <see cref="T:System.String"/> values.
+            </summary>
+            <param name="integerValues"></param>
+            <param name="stringValues"></param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationSources.IntStringMapEnumerationSource.AddMapping(System.Int32,System.String)">
+            <summary>
+            Adds a mapping
+            </summary>
+            <param name="integerValue"></param>
+            <param name="stringValue"></param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationSources.IntStringMapEnumerationSource.RemoveMapping(System.String)">
+            <summary>
+            Removes a mapping
+            </summary>
+            <param name="stringValue"></param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationSources.IntStringMapEnumerationSource.GetFilterFromValue(System.Object)">
+            <summary>
+            Build the filter criteria from the given input.
+            </summary>
+            <param name="value">The selected value for which the criteria is created.</param>
+            <returns>A <see cref="T:System.String"/> representing the criteria.</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationSources.IntStringMapEnumerationSource.GetValueFromFilter(System.String)">
+            <summary>
+            Gets the object value for a specified filter.
+            </summary>
+            <param name="filter">The filter value to be searched</param>
+            <returns>object value for the specified filter</returns>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.EnumerationSources.IntStringMapEnumerationSource.AllValues">
+            <summary>
+            Gets all values which should be displayed.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilters.BoolGridFilter">
+            <summary>
+            A <see cref="T:GridViewExtensions.IGridFilter"/> implementation for filtering boolean columns
+            with a <see cref="T:System.Windows.Forms.CheckBox"/> to control the filter.
+            It allows three states: 
+            In intermediate state no filter will be set.
+            In checked state the filter will show only true values.
+            In unchecked state the filter will only show false values.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.BoolGridFilter.#ctor">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.BoolGridFilter.#ctor(System.Windows.Forms.CheckBox)">
+            <summary>
+            Creates a new instance with <see cref="P:GridViewExtensions.GridFilters.GridFilterBase.UseCustomFilterPlacement"/>
+            set to true.
+            </summary>
+            <param name="checkBox">A <see cref="T:System.Windows.Forms.CheckBox"/> instance which
+            should be used by the filter.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.BoolGridFilter.GetFilter(System.String)">
+            <summary>
+            Gets a simple boolean filter criteria in string representation
+            </summary>
+            <param name="columnName">
+            The name of the column for which the criteria should be generated.
+            </param>
+            <returns>a string representing the current filter criteria</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.BoolGridFilter.SetFilter(System.String)">
+            <summary>
+            Sets a string which a a previous result of <see cref="M:GridViewExtensions.GridFilters.BoolGridFilter.GetFilter(System.String)"/>
+            in order to configure the <see cref="P:GridViewExtensions.GridFilters.BoolGridFilter.FilterControl"/> to match the
+            given filter criteria.
+            </summary>
+            <param name="filter">filter criteria</param>
+            <returns></returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.BoolGridFilter.Clear">
+            <summary>
+            Clears the filter to its initial state.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.BoolGridFilter.Dispose">
+            <summary>
+            Cleans up
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.BoolGridFilter.CheckState">
+            <summary>
+            Gets or sets the current state of the contained <see cref="T:System.Windows.Forms.CheckBox"/>.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.BoolGridFilter.FilterControl">
+            <summary>
+            The <see cref="T:System.Windows.Forms.CheckBox"/> for the GUI.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.BoolGridFilter.HasFilter">
+            <summary>
+            Gets whether a filter is set.
+            True, if the <see cref="T:System.Windows.Forms.CheckBox"/> is not intermediate.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilterFactories.GridFilterFactoryBase">
+            <summary>
+            Base implementation for <see cref="T:GridViewExtensions.IGridFilterFactory"/> handling
+            most of the common tasks. Inheriting classes only need to override
+            <see cref="M:GridViewExtensions.GridFilterFactories.GridFilterFactoryBase.CreateGridFilterInternal(System.Windows.Forms.DataGridViewColumn)"/>. 
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.IGridFilterFactory">
+            <summary>
+            Implemenations of this interface can provide the 
+            <see cref="T:GridViewExtensions.FilterableDataGrid"/> with specific implementations
+            of <see cref="T:GridViewExtensions.IGridFilter"/> to adjust special needs for filtering.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.IGridFilterFactory.BeginGridFilterCreation">
+            <summary>
+            Notifies this instance that the <see cref="T:GridViewExtensions.IGridFilter"/> creation process
+            is being started.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.IGridFilterFactory.EndGridFilterCreation">
+            <summary>
+            Notifies this instance that the <see cref="T:GridViewExtensions.IGridFilter"/> creation process
+            has finished. After this call all created <see cref="T:GridViewExtensions.IGridFilter"/>s should
+            be in a usable state.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.IGridFilterFactory.CreateGridFilter(System.Windows.Forms.DataGridViewColumn)">
+            <summary>
+            When implemented should return a valid <see cref="T:GridViewExtensions.IGridFilter"/>
+            for the specified arguments. 
+            </summary>
+            <param name="column">The <see cref="T:System.Data.DataColumn"/> for which the filter control should be created.</param>
+            <returns>A <see cref="T:GridViewExtensions.IGridFilter"/>.</returns>
+        </member>
+        <member name="E:GridViewExtensions.IGridFilterFactory.Changed">
+            <summary>
+            Event for notification that the behaviour of this
+            instance has changed.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.IGridFilterFactory.GridFilterCreated">
+            <summary>
+            Event for notification when a <see cref="T:GridViewExtensions.IGridFilter"/> has been
+            created in order to use it in a specific column and to allow
+            custom modifications to it.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.GridFilterFactoryBase.#ctor">
+            <summary>
+            Base constructor.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.GridFilterFactoryBase.OnChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.GridFilterFactories.GridFilterFactoryBase.Changed"/> event.
+            </summary>
+            <param name="eventArgs">Event arguments</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.GridFilterFactoryBase.OnGridFilterCreated(GridViewExtensions.GridFilterEventArgs)">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.GridFilterFactories.GridFilterFactoryBase.GridFilterCreated"/> event.
+            </summary>
+            <param name="eventArgs">Event arguments</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.GridFilterFactoryBase.CreateGridFilterInternal(System.Windows.Forms.DataGridViewColumn)">
+            <summary>
+            Must be overridden by implementing classes.
+            Should return a valid <see cref="T:GridViewExtensions.IGridFilter"/> for the specified arguments. 
+            </summary>
+            <param name="column">The <see cref="T:System.Data.DataColumn"/> for which the filter control should be created.</param>
+            <returns>A <see cref="T:GridViewExtensions.IGridFilter"/>.</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.GridFilterFactoryBase.BeginGridFilterCreation">
+            <summary>
+            Notifies this instance that the <see cref="T:GridViewExtensions.IGridFilter"/> creation process
+            is being started.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.GridFilterFactoryBase.EndGridFilterCreation">
+            <summary>
+            Notifies this instance that the <see cref="T:GridViewExtensions.IGridFilter"/> creation process
+            has finished. After this call all created <see cref="T:GridViewExtensions.IGridFilter"/>s should
+            be in a usable state.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.GridFilterFactoryBase.CreateGridFilter(System.Windows.Forms.DataGridViewColumn)">
+            <summary>
+            Creates a <see cref="T:GridViewExtensions.IGridFilter"/> for the specified arguments.
+            It calls <see cref="M:GridViewExtensions.GridFilterFactories.GridFilterFactoryBase.CreateGridFilterInternal(System.Windows.Forms.DataGridViewColumn)"/> which must be overridden
+            by any implementing class and raises the <see cref="E:GridViewExtensions.GridFilterFactories.GridFilterFactoryBase.GridFilterCreated"/>
+            afterwards.
+            </summary>
+            <param name="column">The <see cref="T:System.Data.DataColumn"/> for which the filter control should be created.</param>
+            <returns>A <see cref="T:GridViewExtensions.IGridFilter"/>.</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.GridFilterFactoryBase.ToString">
+            <summary>
+            Returns a textual representation of the class.
+            </summary>
+            <returns>A textual representation of the class.</returns>
+        </member>
+        <member name="E:GridViewExtensions.GridFilterFactories.GridFilterFactoryBase.Changed">
+            <summary>
+            Event for notification that the behaviour of this
+            instance has changed.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.GridFilterFactories.GridFilterFactoryBase.GridFilterCreated">
+            <summary>
+            Event for notification when a <see cref="T:GridViewExtensions.IGridFilter"/> has been
+            created in order to use it in a specific column and to allow
+            custom modifications to it.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.FilterableDataGrid">
+            <summary>
+            Control which embeds an <see cref="T:System.Windows.Forms.DataGridView"/> and a
+            <see cref="T:GridViewExtensions.DataGridFilterExtender"/> for providing automatic 
+            filtering on all visible columns.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.FilterableDataGrid.#ctor">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.FilterableDataGrid.InitializeComponent">
+            <summary> 
+            Erforderliche Methode für die Designerunterstützung. 
+            Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.FilterableDataGrid.GetGridFilters">
+            <summary>
+            Gets all currently set <see cref="T:GridViewExtensions.IGridFilter"/>s.
+            </summary>
+            <returns>Collection of <see cref="T:GridViewExtensions.IGridFilter"/>s.</returns>
+        </member>
+        <member name="M:GridViewExtensions.FilterableDataGrid.ClearFilters">
+            <summary>
+            Clears all filters to initial state.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.FilterableDataGrid.GetFilters">
+            <summary>
+            Gets all filters currently set
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GridViewExtensions.FilterableDataGrid.SetFilters(System.String[])">
+            <summary>
+            Sets all filters to the specified values.
+            The values must be in order of the column styles in the current view.
+            This function should normally be used with data previously coming
+            from the <see cref="M:GridViewExtensions.FilterableDataGrid.GetFilters"/> function.
+            </summary>
+            <param name="filters">filters to set</param>
+        </member>
+        <member name="M:GridViewExtensions.FilterableDataGrid.RefreshFilters">
+            <summary>
+            Refreshes the filter criteria to match the current contents of the associated
+            filter controls.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.FilterableDataGrid.OnBeforeFiltersChanging(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.FilterableDataGrid.BeforeFiltersChanging"/> event.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:GridViewExtensions.FilterableDataGrid.OnAfterFiltersChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.FilterableDataGrid.AfterFiltersChanged"/> event.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:GridViewExtensions.FilterableDataGrid.OnGridFilterBound(GridViewExtensions.GridFilterEventArgs)">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.FilterableDataGrid.GridFilterBound"/> event.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:GridViewExtensions.FilterableDataGrid.OnGridFilterUnbound(GridViewExtensions.GridFilterEventArgs)">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.FilterableDataGrid.GridFilterUnbound"/> event.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:GridViewExtensions.FilterableDataGrid.Dispose(System.Boolean)">
+            <summary> 
+            Cleans up.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.FilterableDataGrid.OnResize(System.EventArgs)">
+            <summary>
+            Repositions the grid to match the new size
+            </summary>
+            <param name="e">event arguments</param>
+        </member>
+        <member name="E:GridViewExtensions.FilterableDataGrid.AfterFiltersChanged">
+            <summary>
+            Event, which gets fired whenever the filter criteria has been changed.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.FilterableDataGrid.BeforeFiltersChanging">
+            <summary>
+            Event, which gets fired whenever the filter criteria are going to be changed.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.FilterableDataGrid.GridFilterBound">
+            <summary>
+            Event, which gets fired whenever an <see cref="T:GridViewExtensions.IGridFilter"/> has been bound
+            and thus added to this instance.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.FilterableDataGrid.GridFilterUnbound">
+            <summary>
+            Event, which gets fired whenever an <see cref="T:GridViewExtensions.IGridFilter"/> has been unbound
+            and thus removed to this instance.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.FilterableDataGrid.AutoRefreshMode">
+            <summary>
+            Gets and sets whether the filter criteria is automatically refreshed when
+            changes are made to the filter controls. If set to false then a call to
+            <see cref="M:GridViewExtensions.FilterableDataGrid.RefreshFilters"/> is needed to manually refresh the criteria.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.FilterableDataGrid.KeepFilters">
+            <summary>
+            Gets and sets whether filters are kept while switching between different tables.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.FilterableDataGrid.EmbeddedDataGridView">
+            <summary>
+            Publishes the embedded <see cref="T:System.Windows.Forms.DataGridView"/> to allow
+            full control over its settings.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.FilterableDataGrid.FilterBoxPosition">
+            <summary>
+            Gets and sets the poisiton of the filter GUI elements.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.FilterableDataGrid.FilterText">
+            <summary>
+            Gets and sets the text for the filter label.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.FilterableDataGrid.FilterFactory">
+            <summary>
+            Gets and sets the <see cref="T:GridViewExtensions.IGridFilterFactory"/> used to generate the filter GUI.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.FilterableDataGrid.FilterTextVisible">
+            <summary>
+            Gets and sets whether the filter label should be visible.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.FilterableDataGrid.Operator">
+            <summary>
+            The selected operator to combine the filter criterias.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.FilterableDataGrid.DataSource">
+            <summary>
+            Gets and sets the <see cref="T:System.ComponentModel.IBindingListView"/> which should be displayed in the grid.
+            This is needed because only <see cref="T:System.ComponentModel.IBindingListView"/>s provide in built mechanisms
+            to filter their content.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.FilterableDataGrid.MessageErrorMode">
+            <summary>
+            Gets and sets what information is shown to the user
+            if an error in the builded filter criterias occurs.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.FilterableDataGrid.ConsoleErrorMode">
+            <summary>
+            Gets and sets what information is printed to the console
+            if an error in the builded filter criterias occurs.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.FilterableDataGrid.BaseFilters">
+            <summary>
+            Gets a modifyable collection which maps <see cref="P:System.Data.DataTable.TableName"/>s
+            to base filter strings which are applied in front of the automatically
+            created filter.
+            </summary>
+            <remarks>
+            The grid contents is not automatically refreshed when modifying this 
+            collection. A call to <see cref="M:GridViewExtensions.FilterableDataGrid.RefreshFilters"/> is needed for this.
+            </remarks>
+        </member>
+        <member name="P:GridViewExtensions.FilterableDataGrid.BaseFilterOperator">
+            <summary>
+            Gets or sets which operator should be used to combine the base filter
+            with the automatically created filters.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.FilterableDataGrid.BaseFilterEnabled">
+            <summary>
+            Gets or sets whether base filters should be used when refreshing
+            the filter criteria. Setting it to false will disable the functionality
+            while still keeping the base filter strings in the <see cref="P:GridViewExtensions.FilterableDataGrid.BaseFilters"/>
+            collection intact.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.FilterableDataGrid.CurrentTableBaseFilter">
+            <summary>
+            Gets or sets the currently used base filter. Internally it adjusts the
+            <see cref="P:GridViewExtensions.FilterableDataGrid.BaseFilters"/> collection with the given value and the current
+            <see cref="P:System.Data.DataTable.TableName"/> and also initiates a refresh.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilters.DistinctValuesGridFilter">
+            <summary>
+            A <see cref="T:GridViewExtensions.IGridFilter"/> implementation for columns with a <see cref="T:System.Windows.Forms.ComboBox"/>
+            containing all values found within the column.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DistinctValuesGridFilter.#ctor(System.Windows.Forms.DataGridViewColumn)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="column">Column where the values list should be generated from.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DistinctValuesGridFilter.#ctor(System.Windows.Forms.DataGridViewColumn,System.Windows.Forms.ComboBox)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="column">Column where the values list should be generated from.</param>
+            <param name="comboBox">Control which should be used to display the values.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DistinctValuesGridFilter.#ctor(System.String[],System.Boolean)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="values">The list of values to be displayed.</param>
+            <param name="containsDbNull">Indicates whether the (null) entry should be displayed or not.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DistinctValuesGridFilter.#ctor(System.String[],System.Boolean,System.Windows.Forms.ComboBox)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="values">The list of values to be displayed.</param>
+            <param name="containsDbNull">Indicates whether the (null) entry should be displayed or not.</param>
+            <param name="comboBox">Control which should be used to display the values.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DistinctValuesGridFilter.GetFilter(System.String)">
+            <summary>
+            Gets a filter with a criteria in string representation.
+            </summary>
+            <param name="columnName">
+            The name of the column for which the criteria should be generated.
+            </param>
+            <returns>a string representing the current filter criteria</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DistinctValuesGridFilter.SetFilter(System.String)">
+            <summary>
+            Sets a string which a a previous result of <see cref="M:GridViewExtensions.GridFilters.DistinctValuesGridFilter.GetFilter(System.String)"/>
+            in order to configure the <see cref="P:GridViewExtensions.GridFilters.DistinctValuesGridFilter.FilterControl"/> to match the
+            given filter criteria.
+            </summary>
+            <param name="filter">filter criteria</param>
+            <returns></returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DistinctValuesGridFilter.Clear">
+            <summary>
+            Clears the filter to its initial state.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DistinctValuesGridFilter.GetDistinctValues(System.Windows.Forms.DataGridViewColumn,System.Boolean@)">
+            <summary>
+            Gets all values found in the specified columns as a string array.
+            </summary>
+            <param name="column">Column to search for values.</param>
+            <param name="containsDbNull">Indicates whether the (null) entry is contained in the column or not.</param>
+            <returns>Array with different values.</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DistinctValuesGridFilter.GetDistinctValues(System.Windows.Forms.DataGridViewColumn,System.Int32,System.Boolean@)">
+            <summary>
+            Gets all values found in the specified columns as a string array
+            limited in size to the value specified. If this value is exceeded
+            than null will be returned instead.
+            </summary>
+            <param name="column">Column to search for values.</param>
+            <param name="maximumValues">Value indicating how many different values should be fetched at maximum.</param>
+            <param name="containsDbNull">Indicates whether the (null) entry is contained in the column or not.</param>
+            <returns>Array with different values, or Null.</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DistinctValuesGridFilter.Dispose">
+            <summary>
+            Cleans up
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.DistinctValuesGridFilter.Values">
+            <summary>
+            Gets all values contained in the <see cref="T:System.Windows.Forms.ComboBox"/>.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.DistinctValuesGridFilter.CurrentValue">
+            <summary>
+            Gets or sets the current value of the contained <see cref="T:System.Windows.Forms.ComboBox"/>.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.DistinctValuesGridFilter.FilterControl">
+            <summary>
+            The <see cref="T:System.Windows.Forms.ComboBox"/> for the GUI.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.DistinctValuesGridFilter.HasFilter">
+            <summary>
+            Gets whether a filter is set.
+            True, if the text of the <see cref="T:System.Windows.Forms.ComboBox"/> is not empty.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilters.DistinctValuesGridFilter.SpecialValue">
+            <summary>
+            Defines special values which can be contained in the <see cref="T:System.Windows.Forms.ComboBox"/>
+            of a <see cref="T:GridViewExtensions.GridFilters.DistinctValuesGridFilter"/>.
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.GridFilters.DistinctValuesGridFilter.SpecialValue.NoFilter">
+            <summary>
+            The special value meaning 'No filtering'.
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.GridFilters.DistinctValuesGridFilter.SpecialValue.NullFilter">
+            <summary>
+            The special value meaning 'Filter null values'.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DistinctValuesGridFilter.SpecialValue.ToString">
+            <summary>
+            Gets a textual representation.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GridViewExtensions.BindingListView`1">
+            <summary>
+            Wrapper for any <see cref="T:System.Collections.IList"/> which implements
+            <see cref="T:System.ComponentModel.IBindingListView"/> and <see cref="T:System.ComponentModel.ITypedList"/>
+            for usage in the <see cref="T:System.Windows.Forms.DataGridView"/>.
+            The contained <see cref="T:System.Collections.IList"/> can explicitely be specified,
+            otherwise a normal <see cref="T:System.Collections.ArrayList"/> is created internally.
+            If changes to this list are made calling <see cref="M:GridViewExtensions.BindingListView`1.RaiseListChanged"/>
+            will raise a notification for the change. Using the list
+            manipulation methods in this class will do this automatically.
+            The <see cref="T:System.ComponentModel.IBindingListView"/> will operate on lists of
+            a certain type which must be specified. If the list contains instances
+            of other types than the one specified then it will not work correctly.
+            Searching and indexing operations are not implemented.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.#ctor">
+            <summary>
+            Creates a new instance with an empty <see cref="P:GridViewExtensions.BindingListView`1.InnerList"/>.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.#ctor(System.Collections.IList)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="list">The <see cref="P:GridViewExtensions.BindingListView`1.InnerList"/> to be used.</param>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.RaiseListChanged">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.BindingListView`1.ListChanged"/> event with <see cref="F:System.ComponentModel.ListChangedType.Reset"/>.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.RaiseListChanged(System.ComponentModel.ListChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.BindingListView`1.ListChanged"/> event with the specified arguments.
+            </summary>
+            <param name="args">Event arguments.</param>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.OnListChanged(System.ComponentModel.ListChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.BindingListView`1.ListChanged"/> event.
+            </summary>
+            <param name="args">Event arguments.</param>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.ApplySort(System.ComponentModel.ListSortDescriptionCollection)">
+            <summary>
+            Sorts the data source based on the given <see cref="T:System.ComponentModel.ListSortDescriptionCollection"/>.
+            </summary>
+            <param name="sorts">
+            The <see cref="T:System.ComponentModel.ListSortDescriptionCollection"/> containing 
+            the sorts to apply to the data source.
+            </param>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.RemoveFilter">
+            <summary>
+            Removes the current filter applied to the data source.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.ApplySort(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)">
+            <summary>
+            Sorts the list based on a PropertyDescriptor and a ListSortDirection.
+            </summary>
+            <param name="property">The <see cref="T:System.ComponentModel.PropertyDescriptor"/> to sort by.</param>
+            <param name="direction">One of the <see cref="T:System.ComponentModel.ListSortDirection"/> values.</param>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.RemoveSort">
+            <summary>
+            Removes any sort applied using <see cref="M:GridViewExtensions.BindingListView`1.ApplySort(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)"/>.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.AddIndex(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Adds the <see cref="T:System.ComponentModel.PropertyDescriptor"/> to the indexes used for searching.
+            NOT IMPLEMENTED!
+            </summary>
+            <param name="property">
+            The <see cref="T:System.ComponentModel.PropertyDescriptor"/> to add to the indexes used for searching.
+            </param>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.AddNew">
+            <summary>
+            Adds a new item to the list.
+            NOT IMPLEMENTED!
+            </summary>
+            <returns>The item added to the list.</returns>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.Find(System.ComponentModel.PropertyDescriptor,System.Object)">
+            <summary>
+            Returns the index of the row that has the given <see cref="T:System.ComponentModel.PropertyDescriptor"/>.
+            NOT IMPLEMENTED!
+            </summary>
+            <param name="property">The <see cref="T:System.ComponentModel.PropertyDescriptor"/> to search on.</param>
+            <param name="key">The value of the property parameter to search for.</param>
+            <returns>The index of the row that has the given <see cref="T:System.ComponentModel.PropertyDescriptor"/>.</returns>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.RemoveIndex(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Removes the <see cref="T:System.ComponentModel.PropertyDescriptor"/> from the indexes used for searching.
+            NOT IMPLEMENTED!
+            </summary>
+            <param name="property">
+            The <see cref="T:System.ComponentModel.PropertyDescriptor"/> to remove from the indexes used for searching.
+            </param>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.Add(System.Object)">
+            <summary>
+            Adds an item to the <see cref="T:System.Collections.IList"/>.  
+            </summary>
+            <param name="value">The instance to add to the <see cref="T:System.Collections.IList"/>.</param>
+            <returns>The position into which the new element was inserted.</returns>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.Clear">
+            <summary>
+            Removes all items from the <see cref="T:System.Collections.IList"/>.  
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.Contains(System.Object)">
+            <summary>
+            Determines whether the <see cref="T:System.Collections.IList"/> contains a specific value.
+            </summary>
+            <param name="value">The instance to locate in the <see cref="T:System.Collections.IList"/>.</param>
+            <returns>true if the instance is found in the <see cref="T:System.Collections.IList"/>; otherwise, false.</returns>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.IndexOf(System.Object)">
+            <summary>
+            Determines the index of a specific item in the <see cref="T:System.Collections.IList"/>. 
+            </summary>
+            <param name="value">The instance to locate in the <see cref="T:System.Collections.IList"/>.</param>
+            <returns>The index of value if found in the list; otherwise, -1.</returns>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.Insert(System.Int32,System.Object)">
+            <summary>
+            Inserts an item to the <see cref="T:System.Collections.IList"/> at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which value should be inserted.</param>
+            <param name="value">The instance to insert into the <see cref="T:System.Collections.IList"/>.</param>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.Remove(System.Object)">
+            <summary>
+            Removes the first occurrence of a specific object from the <see cref="T:System.Collections.IList"/>. 
+            </summary>
+            <param name="value">The instance to remove from the <see cref="T:System.Collections.IList"/>.</param>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.RemoveAt(System.Int32)">
+            <summary>
+            Removes the <see cref="T:System.Collections.IList"/> item at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the item to remove.</param>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.CopyTo(System.Array,System.Int32)">
+            <summary>
+            Copies the elements of the <see cref="T:System.Collections.ICollection"/> to an <see cref="T:System.Array"/>, 
+            starting at a particular <see cref="T:System.Array"/> index.
+            </summary>
+            <param name="array">
+            The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from 
+            <see cref="T:System.Collections.ICollection"/>. The <see cref="T:System.Array"/> must have zero-based indexing.
+            </param>
+            <param name="index">The zero-based index in array at which copying begins.</param>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate 
+            through the collection.
+            </returns>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.GetItemProperties(System.ComponentModel.PropertyDescriptor[])">
+            <summary>
+            Returns the <see cref="T:System.ComponentModel.PropertyDescriptorCollection"/> that represents the 
+            properties on each item used to bind data.
+            </summary>
+            <param name="listAccessors">
+            An array of <see cref="T:System.ComponentModel.PropertyDescriptor"/> objects to find in the collection 
+            as bindable. This can be a null reference.
+            </param>
+            <returns>The <see cref="T:System.ComponentModel.PropertyDescriptorCollection"/> that represents the 
+            properties on each item used to bind data.</returns>
+        </member>
+        <member name="M:GridViewExtensions.BindingListView`1.GetListName(System.ComponentModel.PropertyDescriptor[])">
+            <summary>
+            Returns the name of the list.
+            </summary>
+            <param name="listAccessors">
+            An array of <see cref="T:System.ComponentModel.PropertyDescriptor"/> objects, for which the list 
+            name is returned. This can be a null reference.
+            </param>
+            <returns>The name of the list.</returns>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.InnerList">
+            <summary>
+            Gets the contained <see cref="T:System.Collections.IList"/> actually
+            holding the data.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.Filter">
+            <summary>
+            Gets or sets the filter to be used to exclude items from the collection 
+            of items returned by the data source.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.SortDescriptions">
+            <summary>
+            Gets the collection of sort descriptions currently applied to the data source.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.SupportsAdvancedSorting">
+            <summary>
+            Gets a value indicating whether the data source supports advanced sorting.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.SupportsFiltering">
+            <summary>
+            Gets a value indicating whether the data source supports filtering.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.BindingListView`1.ListChanged">
+            <summary>
+            Occurs when the list changes or an item in the list changes.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.AllowEdit">
+            <summary>
+            Gets whether you can update items in the list.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.AllowNew">
+            <summary>
+            Gets whether you can add items to the list using <see cref="M:GridViewExtensions.BindingListView`1.AddNew"/>.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.AllowRemove">
+            <summary>
+            Gets whether you can remove items from the list, using 
+            <see cref="M:GridViewExtensions.BindingListView`1.Remove(System.Object)"/> or <see cref="M:GridViewExtensions.BindingListView`1.RemoveAt(System.Int32)"/>.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.IsSorted">
+            <summary>
+            Gets whether the items in the list are sorted.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.SortDirection">
+            <summary>
+            Gets the direction of the sort.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.SortProperty">
+            <summary>
+            Gets the <see cref="T:System.ComponentModel.PropertyDescriptor"/> that is being used for sorting.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.SupportsChangeNotification">
+            <summary>
+            Gets whether a <see cref="E:GridViewExtensions.BindingListView`1.ListChanged"/> event is raised when the 
+            list changes or an item in the list changes.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.SupportsSearching">
+            <summary>
+            Gets whether the list supports searching using the <see cref="M:GridViewExtensions.BindingListView`1.Find(System.ComponentModel.PropertyDescriptor,System.Object)"/> method.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.SupportsSorting">
+            <summary>
+            Gets whether the list supports sorting.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.IsFixedSize">
+            <summary>
+            Gets a value indicating whether the <see cref="T:System.Collections.IList"/> has a fixed size. 
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the <see cref="T:System.Collections.IList"/> is read-only.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the element to get or set.</param>
+            <returns>The element at the specified index.</returns>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.Count">
+            <summary>
+            Gets the number of elements contained in the <see cref="T:System.Collections.ICollection"/>. 
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.IsSynchronized">
+            <summary>
+            Gets a value indicating whether access to the <see cref="T:System.Collections.ICollection"/> is 
+            synchronized (thread safe). 
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.BindingListView`1.SyncRoot">
+            <summary>
+            Gets an object that can be used to synchronize access to the <see cref="T:System.Collections.ICollection"/>. 
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilters.DateGridFilter">
+            <summary>
+            A <see cref="T:GridViewExtensions.IGridFilter"/> implementation for filtering date columns
+            with a <see cref="T:GridViewExtensions.GridFilters.DateGridFilterControl"/> to control the filter.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DateGridFilter.#ctor">
+            <summary>
+            Creates a new instance with <see cref="P:GridViewExtensions.GridFilters.GridFilterBase.UseCustomFilterPlacement"/>
+            and <see cref="P:GridViewExtensions.GridFilters.DateGridFilter.ShowInBetweenOperator"/> set to false.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DateGridFilter.#ctor(System.Boolean)">
+            <summary>
+            Creates a new instance with <see cref="P:GridViewExtensions.GridFilters.GridFilterBase.UseCustomFilterPlacement"/>
+            set to false.
+            </summary>
+            <param name="showInBetweenOperator">Determines whether the 'in between' operator is available.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DateGridFilter.#ctor(GridViewExtensions.GridFilters.DateGridFilterControl)">
+            <summary>
+            Creates a new instance with <see cref="P:GridViewExtensions.GridFilters.GridFilterBase.UseCustomFilterPlacement"/>
+            set to true and not having the 'in between' operator.
+            </summary>
+            <param name="dateGridFilterControl">A <see cref="T:GridViewExtensions.GridFilters.DateGridFilterControl"/> 
+            instance which should be used by the filter.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DateGridFilter.#ctor(GridViewExtensions.GridFilters.DateGridFilterControl,System.Boolean)">
+            <summary>
+            Creates a new instance with <see cref="P:GridViewExtensions.GridFilters.GridFilterBase.UseCustomFilterPlacement"/>
+            set to true.
+            </summary>
+            <param name="dateGridFilterControl">A <see cref="T:GridViewExtensions.GridFilters.DateGridFilterControl"/> 
+            instance which should be used by the filter.</param>
+            <param name="showInBetweenOperator">Determines whether the 'in between' operator is available.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DateGridFilter.GetFilter(System.String)">
+            <summary>
+            Gets a filter with the current criteria in string representation.
+            </summary>
+            <param name="columnName">
+            The name of the column for which the criteria should be generated.
+            </param>
+            <returns>A string representing the current filter criteria</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DateGridFilter.SetFilter(System.String)">
+            <summary>
+            Sets a string which a a previous result of <see cref="M:GridViewExtensions.GridFilters.DateGridFilter.GetFilter(System.String)"/>
+            in order to configure the <see cref="P:GridViewExtensions.GridFilters.DateGridFilter.FilterControl"/> to match the
+            given filter criteria.
+            </summary>
+            <param name="filter">filter criteria</param>
+            <returns></returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DateGridFilter.Clear">
+            <summary>
+            Clears the filter to its initial state.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.DateGridFilter.ShowInBetweenOperator">
+            <summary>
+            Sets or gets whether the 'in between' operator should be available.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.DateGridFilter.Date1">
+            <summary>
+            Gets or sets the current date of the first contained <see cref="T:System.Windows.Forms.DateTimePicker"/>.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.DateGridFilter.Date2">
+            <summary>
+            Gets or sets the current date of the second contained <see cref="T:System.Windows.Forms.DateTimePicker"/>.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.DateGridFilter.Operator">
+            <summary>
+            Gets or sets the current operator of the contained <see cref="T:System.Windows.Forms.ComboBox"/>.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.DateGridFilter.FilterControl">
+            <summary>
+            Returns the instance itsself, which contains a <see cref="T:System.Windows.Forms.DateTimePicker"/>
+            and a <see cref="T:System.Windows.Forms.ComboBox"/> to adjust the filter.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.DateGridFilter.HasFilter">
+            <summary>
+            Gets whether a filter is set.
+            True, if the <see cref="T:System.Windows.Forms.ComboBox"/> is not empty.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilterFactories.NullGridFilterFactory">
+            <summary>
+            <see cref="T:GridViewExtensions.IGridFilterFactory"/> implementation which creates a
+            <see cref="T:GridViewExtensions.GridFilters.NullGridFilter"/> on every column.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.NullGridFilterFactory.#ctor">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.NullGridFilterFactory.CreateGridFilterInternal(System.Windows.Forms.DataGridViewColumn)">
+            <summary>
+            Return always a <see cref="T:GridViewExtensions.GridFilters.NullGridFilter"/>. 
+            </summary>
+            <param name="column">The <see cref="T:System.Data.DataColumn"/> for which the filter control should be created.</param>
+            <returns>A <see cref="T:GridViewExtensions.IGridFilter"/>.</returns>
+        </member>
+        <member name="T:GridViewExtensions.DataFilter">
+            <summary>
+            Public Wrapper for the internal DataExpression class in the .Net framework.
+            The purpose of this class is to test if single <see cref="T:System.Data.DataRow"/>s match
+            a given filter expression.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.DataFilter.#ctor(System.String,System.Data.DataTable)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="expression">Filter expression string.</param>
+            <param name="dataTable"><see cref="T:System.Data.DataTable"/> of the rows to be tested.</param>
+        </member>
+        <member name="M:GridViewExtensions.DataFilter.Invoke(System.Data.DataRow)">
+            <summary>
+            Tests whether a single <see cref="T:System.Data.DataRow"/> matches the filter expression.
+            </summary>
+            <param name="row"><see cref="T:System.Data.DataRow"/> to be tested.</param>
+            <returns>True if the row matches the filter expression, otherwise false.</returns>
+        </member>
+        <member name="M:GridViewExtensions.DataFilter.Invoke(System.Data.DataRow,System.Data.DataRowVersion)">
+            <summary>
+            Tests whether a single <see cref="T:System.Data.DataRow"/> matches the filter expression.
+            </summary>
+            <param name="row"><see cref="T:System.Data.DataRow"/> to be tested.</param>
+            <param name="version">The row version to use.</param>
+            <returns>True if the row matches the filter expression, otherwise false.</returns>
+        </member>
+        <member name="T:GridViewExtensions.GridFilters.EnumerationGridFilter">
+            <summary>
+            A <see cref="T:GridViewExtensions.IGridFilter"/> implementation for filtering any columns
+            with enmuration types. A <see cref="T:System.Windows.Forms.ComboBox"/> will show all
+            possible enumeration values from which the user can select one.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationGridFilter.#ctor(GridViewExtensions.GridFilters.EnumerationSources.IEnumerationSource)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="enumerationSource">Source defining what values should
+            be displayed and how they are filtered.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationGridFilter.#ctor(GridViewExtensions.GridFilters.EnumerationSources.IEnumerationSource,System.Windows.Forms.ComboBox)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="enumerationSource">Source defining what values should
+            be displayed and how they are filtered.</param>
+            <param name="comboBox">Control which should be used to display the enumeration values.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationGridFilter.#ctor(System.Type)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="dataType"><see cref="T:System.Type"/> of the enumeration which values
+            should be displayed</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationGridFilter.GetFilter(System.String)">
+            <summary>
+            Gets a filter with a criteria in string representation.
+            </summary>
+            <param name="columnName">
+            The name of the column for which the criteria should be generated.
+            </param>
+            <returns>a string representing the current filter criteria</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationGridFilter.SetFilter(System.String)">
+            <summary>
+            Sets a string which a a previous result of <see cref="M:GridViewExtensions.GridFilters.EnumerationGridFilter.GetFilter(System.String)"/>
+            in order to configure the <see cref="P:GridViewExtensions.GridFilters.EnumerationGridFilter.FilterControl"/> to match the
+            given filter criteria.
+            </summary>
+            <param name="filter">filter criteria</param>
+            <returns></returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationGridFilter.Clear">
+            <summary>
+            Clears the filter to its initial state.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationGridFilter.Dispose">
+            <summary>
+            Cleans up
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.EnumerationGridFilter.Value">
+            <summary>
+            Gets or sets the current value of the contained <see cref="T:System.Windows.Forms.ComboBox"/>.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.EnumerationGridFilter.FilterControl">
+            <summary>
+            The <see cref="T:System.Windows.Forms.ComboBox"/> for the GUI.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.EnumerationGridFilter.HasFilter">
+            <summary>
+            Gets whether a filter is set.
+            True, if the text of the <see cref="T:System.Windows.Forms.ComboBox"/> is not empty.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.FilterPosition">
+            <summary>
+            Enumeration representing the regions where the filter GUI elements
+            are shown.
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.FilterPosition.Top">
+            <summary>
+            Filter GUI above the grid.
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.FilterPosition.Bottom">
+            <summary>
+            Filter GUI beyond the grid.
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.FilterPosition.Off">
+            <summary>
+            Turns off the filter
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.DataGridFilterExtender">
+            <summary>
+            Component which allows <see cref="P:GridViewExtensions.DataGridFilterExtender.DataGridView"/>s to be extended with
+            autometed filter functionality.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.DataGridFilterExtender.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            Creates a new instance
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:GridViewExtensions.DataGridFilterExtender.#ctor">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.DataGridFilterExtender.Dispose(System.Boolean)">
+            <summary> 
+            Verwendete Ressourcen bereinigen.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.DataGridFilterExtender.InitializeComponent">
+            <summary>
+            Erforderliche Methode f|r die Designerunterst|tzung. 
+            Der Inhalt der Methode darf nicht mit dem Code-Editor gedndert werden.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.DataGridFilterExtender.GetGridFilters">
+            <summary>
+            Gets all currently set <see cref="T:GridViewExtensions.IGridFilter"/>s.
+            </summary>
+            <returns>Collection of <see cref="T:GridViewExtensions.IGridFilter"/>s.</returns>
+        </member>
+        <member name="M:GridViewExtensions.DataGridFilterExtender.ClearFilters">
+            <summary>
+            Clears all filters to initial state.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.DataGridFilterExtender.GetFilters">
+            <summary>
+            Gets all filters currently set
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GridViewExtensions.DataGridFilterExtender.SetFilters(System.String[])">
+            <summary>
+            Sets all filters to the specified values.
+            The values must be in order of the column styles in the current view.
+            This function should normally be used with data previously coming
+            from the <see cref="M:GridViewExtensions.DataGridFilterExtender.GetFilters"/> function.
+            </summary>
+            <param name="filters">filters to set</param>
+        </member>
+        <member name="M:GridViewExtensions.DataGridFilterExtender.RefreshFilters">
+            <summary>
+            Refreshes the filter criteria to match the current contents of the associated
+            filter controls.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.DataGridFilterExtender.OnBeforeFiltersChanging(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.DataGridFilterExtender.BeforeFiltersChanging"/> event.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:GridViewExtensions.DataGridFilterExtender.OnAfterFiltersChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.DataGridFilterExtender.AfterFiltersChanged"/> event.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:GridViewExtensions.DataGridFilterExtender.OnGridFilterBound(GridViewExtensions.GridFilterEventArgs)">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.DataGridFilterExtender.GridFilterBound"/> event.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:GridViewExtensions.DataGridFilterExtender.OnGridFilterUnbound(GridViewExtensions.GridFilterEventArgs)">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.DataGridFilterExtender.GridFilterUnbound"/> event.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:GridViewExtensions.DataGridFilterExtender.BeginInit">
+            <summary>
+            Sets a flag to true representing that the component is now initializing.
+            </summary>
+            <remarks>
+            This is important as the component must know if the properties are set within
+            the designer generated code so that no abnormal moving of the contained grid occurs
+            when AutoAdjustGridPosition is set to true
+            </remarks>
+        </member>
+        <member name="M:GridViewExtensions.DataGridFilterExtender.EndInit">
+            <summary>
+            Sets a flag to false representing that the initialization of the
+            component has completed
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.DataGridFilterExtender.AfterFiltersChanged">
+            <summary>
+            Event, which gets fired whenever the filter criteria has been changed.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.DataGridFilterExtender.BeforeFiltersChanging">
+            <summary>
+            Event, which gets fired whenever the filter criteria are going to be changed.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.DataGridFilterExtender.GridFilterBound">
+            <summary>
+            Event, which gets fired whenever an <see cref="T:GridViewExtensions.IGridFilter"/> has been bound
+            and thus added to this instance.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.DataGridFilterExtender.GridFilterUnbound">
+            <summary>
+            Event, which gets fired whenever an <see cref="T:GridViewExtensions.IGridFilter"/> has been unbound
+            and thus removed to this instance.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.KeepFilters">
+            <summary>
+            Gets and sets whether filters are kept while switching between different tables.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.AutoRefreshMode">
+            <summary>
+            Gets and sets whether the filter criteria is automatically refreshed when
+            changes are made to the filter controls. If set to false then a call to
+            <see cref="M:GridViewExtensions.DataGridFilterExtender.RefreshFilters"/> is needed to manually refresh the criteria.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.FilterBoxPosition">
+            <summary>
+            Gets and sets the poisiton of the filter GUI elements.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.AutoAdjustGridPosition">
+            <summary>
+            Sets whether the bounds of the extended DataGridView should be
+            set automatically depending on where the filters are displayed,
+            so that the totally covered area by grid and filters is always 
+            the same.
+            </summary>
+            <remarks>
+            This wont function correctly if the grid is docked
+            </remarks>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.FilterText">
+            <summary>
+            Gets and sets the text for the filter label.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.FilterTextVisible">
+            <summary>
+            Gets and sets whether the filter label should be visible.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.ControlBounds">
+            <summary>
+            The bounds of the control with the GUI for filtering
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.NeededControlHeight">
+            <summary>
+            The Height of the control which is positioned for filtering
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.FilterFactory">
+            <summary>
+            Gets and sets the <see cref="T:GridViewExtensions.IGridFilterFactory"/> used to generate the filter GUI.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.Operator">
+            <summary>
+            The selected operator to combine the filter criterias.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.MessageErrorMode">
+            <summary>
+            Gets and sets what information is showed to the user
+            if an error in the builded filter criterias occurs.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.ConsoleErrorMode">
+            <summary>
+            Gets and sets what information is showed to the user
+            if an error in the builded filter criterias occurs.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.BaseFilters">
+            <summary>
+            Gets a modifyable collection which maps <see cref="P:System.Data.DataTable.TableName"/>s
+            to base filter strings which are applied in front of the automatically
+            created filter.
+            </summary>
+            <remarks>
+            The grid contents is not automatically refreshed when modifying this 
+            collection. A call to <see cref="M:GridViewExtensions.DataGridFilterExtender.RefreshFilters"/> is needed for this.
+            </remarks>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.BaseFilterOperator">
+            <summary>
+            Gets or sets which operator should be used to combine the base filter
+            with the automatically created filters.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.BaseFilterEnabled">
+            <summary>
+            Gets or sets whether base filters should be used when refreshing
+            the filter criteria. Setting it to false will disable the functionality
+            while still keeping the base filter strings in the <see cref="P:GridViewExtensions.DataGridFilterExtender.BaseFilters"/>
+            collection intact.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.CurrentTableBaseFilter">
+            <summary>
+            Gets or sets the currently used base filter. Internally it adjusts the
+            <see cref="P:GridViewExtensions.DataGridFilterExtender.BaseFilters"/> collection with the given value and the current
+            <see cref="P:System.Data.DataTable.TableName"/> and also initiates a refresh.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.DataGridFilterExtender.DataGridView">
+            <summary>
+            Gets and sets the grid which should be extended.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilters.TextGridFilter">
+            <summary>
+            A <see cref="T:GridViewExtensions.IGridFilter"/> implementation for filtering any columns
+            with a <see cref="T:System.Windows.Forms.TextBox"/> to control the filter.
+            All rows not beginning with the specified text are filtered out.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.TextGridFilter.#ctor(System.Windows.Forms.TextBox)">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.TextGridFilter.#ctor">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.TextGridFilter.GetFilter(System.String)">
+            <summary>
+            Gets a filter with a like criteria in string representation
+            </summary>
+            <param name="columnName">
+            The name of the column for which the criteria should be generated.
+            </param>
+            <returns>a string representing the current filter criteria</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.TextGridFilter.SetFilter(System.String)">
+            <summary>
+            Sets a string which a a previous result of <see cref="M:GridViewExtensions.GridFilters.TextGridFilter.GetFilter(System.String)"/>
+            in order to configure the <see cref="P:GridViewExtensions.GridFilters.TextGridFilter.FilterControl"/> to match the
+            given filter criteria.
+            </summary>
+            <param name="filter">filter criteria</param>
+            <returns></returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.TextGridFilter.Clear">
+            <summary>
+            Clears the filter to its initial state.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.TextGridFilter.Dispose">
+            <summary>
+            Cleans up
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.TextGridFilter.Text">
+            <summary>
+            Gets or sets the current text of the contained <see cref="T:System.Windows.Forms.TextBox"/>.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.TextGridFilter.FilterControl">
+            <summary>
+            The <see cref="T:System.Windows.Forms.TextBox"/> for the GUI.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.TextGridFilter.HasFilter">
+            <summary>
+            Gets whether a filter is set.
+            True, if the text of the <see cref="T:System.Windows.Forms.CheckBox"/> is not empty.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory">
+            <summary>
+            Default implementation for <see cref="T:GridViewExtensions.IGridFilterFactory"/> which
+            should be applicable for most standard needs.
+            The creation process consists of these steps:
+            1. If the column data type is an enumeration and <see cref="P:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.HandleEnumerationTypes"/>
+            is set to true than an <see cref="T:GridViewExtensions.GridFilters.EnumerationGridFilter"/> is created.
+            2. If <see cref="P:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.CreateDistinctGridFilters"/> is set to true than it is analyzed
+            if the column contains less or equal distinct values than specified by
+            <see cref="P:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.MaximumDistinctValues"/>. If yes than an <see cref="T:GridViewExtensions.GridFilters.DistinctValuesGridFilter"/>
+            is created. The <see cref="P:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.MaximumDistinctValues"/> property is not only 
+            important to reduce the maximum number of entries the <see cref="T:System.Windows.Forms.ComboBox"/>
+            gets filled with but also to improve performance because the analysis of the 
+            columns data will be stopped immediately when more values are found then 
+            specified by it and thus the analysis doesn't have to search through the whole 
+            data source.
+            3. If a grid filter type is specified for the data type of the column than this
+            one will be created. The data type to grid filter type matching can be altered
+            by calls to <see cref="M:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.AddGridFilter(System.Type,System.Type)"/> and <see cref="M:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.RemoveGridFilter(System.Type)"/>. Note 
+            that only grid filter types which implement <see cref="T:GridViewExtensions.IGridFilter"/> and which 
+            have an empty public constructor are allowed.
+            4. If still no filter was created than the filter specified by
+            <see cref="P:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.DefaultGridFilterType"/> will be created. By default this is the
+            <see cref="T:GridViewExtensions.GridFilters.TextGridFilter"/>. Note that again only grid filter types which implement
+            <see cref="T:GridViewExtensions.IGridFilter"/> and which have an empty public constructor are allowed.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.#ctor">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.ConfigureDistinctGridFilterHandling(System.Boolean,System.Int32)">
+            <summary>
+            Sets <see cref="P:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.CreateDistinctGridFilters"/> and <see cref="P:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.MaximumDistinctValues"/>
+            simultaneously to improve performance.
+            </summary>
+            <param name="createDistinctGridFilters">
+            Indicator whether grid filters of type <see cref="T:GridViewExtensions.GridFilters.DistinctValuesGridFilter"/>
+            should be created automatically
+            </param>
+            <param name="maximumDistinctValues">
+            Maximum number of distinct values column should have
+            when a <see cref="T:GridViewExtensions.GridFilters.DistinctValuesGridFilter"/> is created.
+            </param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.AddGridFilter(System.Type,System.Type)">
+            <summary>
+            Adds a type for <see cref="T:GridViewExtensions.IGridFilter"/> for the
+            specified datatype.
+            </summary>
+            <param name="dataType">
+            <see cref="T:System.Type"/> for which a special <see cref="T:GridViewExtensions.IGridFilter"/> should be generated.
+            </param>
+            <param name="gridFilterType">
+            <see cref="T:System.Type"/> of the <see cref="T:GridViewExtensions.IGridFilter"/> to be generated.
+            </param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.RemoveGridFilter(System.Type)">
+            <summary>
+            Removes a specialized type for <see cref="T:GridViewExtensions.IGridFilter"/> for a given datatype.
+            </summary>
+            <param name="dataType">
+            <see cref="T:System.Type"/> for which a special <see cref="T:GridViewExtensions.IGridFilter"/> should be removed.
+            </param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.CreateGridFilterInternal(System.Windows.Forms.DataGridViewColumn)">
+            <summary>
+            Creates a new instance of <see cref="T:GridViewExtensions.IGridFilter"/>.
+            The concrete implementation depends on the given datatype.
+            The parameters tablename and columnanem are ignored in this implementation.
+            </summary>
+            <param name="column">The <see cref="T:System.Data.DataColumn"/> for which the filter control should be created.</param>
+            <returns>A <see cref="T:GridViewExtensions.IGridFilter"/>.</returns>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.DefaultShowDateInBetweenOperator">
+            <summary>
+            Sets or gets whether created <see cref="T:GridViewExtensions.GridFilters.DateGridFilter"/>s should by default
+            show the 'in between' operator.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.DefaultShowNumericInBetweenOperator">
+            <summary>
+            Sets or gets whether created <see cref="T:GridViewExtensions.GridFilters.NumericGridFilter"/>s should by default
+            show the 'in between' operator.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.HandleEnumerationTypes">
+            <summary>
+            Gets/sets whether enumeration types are automatically handled
+            with a special <see cref="T:GridViewExtensions.IGridFilter"/> implementation.
+            Only applies for datatypes not explicitely set.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.DefaultGridFilterType">
+            <summary>
+            Gets and sets the <see cref="T:System.Type"/> of the IGridFilter which
+            should handle all unspecified datatypes.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.CreateDistinctGridFilters">
+            <summary>
+            Gets or sets whether grid filters of type <see cref="T:GridViewExtensions.GridFilters.DistinctValuesGridFilter"/>
+            should be created automatically. Note that this might reduce performance
+            as every column is analyzed to get the different values it contains.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.MaximumDistinctValues">
+            <summary>
+            Gets or sets the maximum number of distinct values column should have
+            when a <see cref="T:GridViewExtensions.GridFilters.DistinctValuesGridFilter"/> is created.
+            If this limit is exceeded than a standard filter will be created.
+            Value is only considered when <see cref="P:GridViewExtensions.GridFilterFactories.DefaultGridFilterFactory.CreateDistinctGridFilters"/> is
+            set to true.
+            The value set must be set to 1 or greater. If all values contained within
+            a column without any limitation should be generated than set this property
+            to <see cref="F:System.Int32.MaxValue"/>.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilters.EnumerationSources.TypeEnumerationSource">
+            <summary>
+            <see cref="T:GridViewExtensions.GridFilters.EnumerationSources.IEnumerationSource"/> implementation which gets its values from
+            an enumeration type via reflection.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationSources.TypeEnumerationSource.#ctor(System.Type)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="dataType">Enumeration type</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationSources.TypeEnumerationSource.GetFilterFromValue(System.Object)">
+            <summary>
+            Build the filter criteria from the given input.
+            </summary>
+            <param name="value">The selected value for which the criteria is created.</param>
+            <returns>A <see cref="T:System.String"/> representing the criteria.</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EnumerationSources.TypeEnumerationSource.GetValueFromFilter(System.String)">
+            <summary>
+            Gets the object value for a specified filter.
+            </summary>
+            <param name="filter">The filter value to be searched</param>
+            <returns>object value for the specified filter</returns>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.EnumerationSources.TypeEnumerationSource.AllValues">
+            <summary>
+            Gets all values which should be displayed.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilterEventHandler">
+            <summary>
+            Delegate for use with <see cref="T:GridViewExtensions.GridFilterEventArgs"/>.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilterEventArgs">
+            <summary>
+            Argumentsclass for events needing extended informations about <see cref="T:GridViewExtensions.IGridFilter"/>s.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterEventArgs.#ctor(System.Windows.Forms.DataGridViewColumn,GridViewExtensions.IGridFilter)">
+            <summary>
+            Creates a new instance
+            </summary>
+            <param name="column">Column the <see cref="T:GridViewExtensions.IGridFilter"/> is created for.</param>
+            <param name="gridFilter">Default <see cref="T:GridViewExtensions.IGridFilter"/> instance.</param>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterEventArgs.DataType">
+            <summary>
+            Type of the column the <see cref="T:GridViewExtensions.IGridFilter"/> is created for.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterEventArgs.ColumnName">
+            <summary>
+            Name of the column the <see cref="T:GridViewExtensions.IGridFilter"/> is created for.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterEventArgs.Column">
+            <summary>
+            The column the <see cref="T:GridViewExtensions.IGridFilter"/> is created for.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterEventArgs.HeaderText">
+            <summary>
+            Text of the header of the column the <see cref="T:GridViewExtensions.IGridFilter"/> is created for.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterEventArgs.GridFilter">
+            <summary>
+            Gets/sets the <see cref="T:GridViewExtensions.IGridFilter"/> which should be used.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilters.EmptyGridFilter">
+            <summary>
+            A dummy <see cref="T:GridViewExtensions.IGridFilter"/> implementation, which does no filtering.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EmptyGridFilter.#ctor">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EmptyGridFilter.GetFilter(System.String)">
+            <summary>
+            Always returns an empty string.
+            </summary>
+            <param name="columnName">Not necessary.</param>
+            <returns>An empty string.</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EmptyGridFilter.SetFilter(System.String)">
+            <summary>
+            Does nothing.
+            </summary>
+            <param name="filter">filter criteria</param>
+            <returns></returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.EmptyGridFilter.Clear">
+            <summary>
+            Clears the filter to its initial state.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.EmptyGridFilter.FilterControl">
+            <summary>
+            Gets an empty control.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.EmptyGridFilter.HasFilter">
+            <summary>
+            Always return false.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilters.DateGridFilterControl">
+            <summary>
+            A control with a <see cref="P:GridViewExtensions.GridFilters.DateGridFilterControl.ComboBox"/> and two <see cref="T:System.Windows.Forms.DateTimePicker"/>s
+            needed in the <see cref="T:GridViewExtensions.GridFilters.DateGridFilter"/>.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DateGridFilterControl.#ctor">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DateGridFilterControl.Dispose(System.Boolean)">
+            <summary> 
+            Cleans up.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DateGridFilterControl.OnResize(System.EventArgs)">
+            <summary>
+            Resizes the contained <see cref="T:System.Windows.Forms.DateTimePicker"/>s so that they
+            have the same width.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.DateGridFilterControl.InitializeComponent">
+            <summary> 
+            Erforderliche Methode für die Designerunterstützung. 
+            Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.GridFilters.DateGridFilterControl.Changed">
+            <summary>
+            Event firing when either the <see cref="P:GridViewExtensions.GridFilters.DateGridFilterControl.ComboBox"/> or
+            the <see cref="T:System.Windows.Forms.DateTimePicker"/> has changed.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.DateGridFilterControl.DateTimePicker1">
+            <summary>
+            Gets the first contained <see cref="T:System.Windows.Forms.DateTimePicker"/> instance.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.DateGridFilterControl.DateTimePicker2">
+            <summary>
+            Gets the second contained <see cref="T:System.Windows.Forms.DateTimePicker"/> instance.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.DateGridFilterControl.ComboBox">
+            <summary>
+            Gets the contained <see cref="P:GridViewExtensions.GridFilters.DateGridFilterControl.ComboBox"/> instance.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilterFactories.LayoutedPanel">
+            <summary>
+            A panel which positions <see cref="T:System.Windows.Forms.Control"/>s with their 
+            corresponding <see cref="T:System.Windows.Forms.Label"/>s in a layouted way.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.LayoutedPanel.#ctor">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.LayoutedPanel.Clear">
+            <summary>
+            Clear the contents of this instance.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.LayoutedPanel.Fill(System.Windows.Forms.Label[],System.Windows.Forms.Control[])">
+            <summary>
+            Fills the instance with the given controls in the two arrays.
+            Both arrays must have the same size. Otherwise an <see cref="T:System.ArgumentException"/>
+            will be thrown.
+            </summary>
+            <param name="labels">Array with <see cref="T:System.Windows.Forms.Label"/> objects</param>
+            <param name="controls">Array with <see cref="T:System.Windows.Forms.Control"/> objects</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.LayoutedPanel.OnResize(System.EventArgs)">
+            <summary>
+            Repositions the contents after the control has been resized.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterFactories.LayoutedPanel.ControlsMinimumWidth">
+            <summary>
+            Gets and sets the minimum width for the controls. If the panel isn't
+            big enough scrollbars will be created.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterFactories.LayoutedPanel.HorizontalSpacing">
+            <summary>
+            Gets and sets the horizontal space between the labels and controls.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterFactories.LayoutedPanel.VerticalSpacing">
+            <summary>
+            Gets and sets the vertical space between the rows.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterFactories.LayoutedPanel.RightAlignLabels">
+            <summary>
+            Gets and sets whether the labels are aligned to the right or to the left.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl">
+            <summary>
+            Implementation of <see cref="T:GridViewExtensions.IGridFilterFactory"/> extending another
+            <see cref="T:GridViewExtensions.IGridFilterFactory"/> instance by overriding the default
+            placement of the filter controls and placing them in a layouted way
+            outside of the grid. 
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl.#ctor">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl.Dispose(System.Boolean)">
+            <summary> 
+            Die verwendeten Ressourcen bereinigen.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl.InitializeComponent">
+            <summary> 
+            Erforderliche Methode für die Designerunterstützung. 
+            Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl.HasChanged">
+            <summary>
+            Notification method to this instance that the filter
+            customization logic has changed and that the filters 
+            need to be recreated
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl.BeginGridFilterCreation">
+            <summary>
+            Notifies this instance that the <see cref="T:GridViewExtensions.IGridFilter"/> creation process
+            is being started.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl.EndGridFilterCreation">
+            <summary>
+            Notifies this instance that the <see cref="T:GridViewExtensions.IGridFilter"/> creation process
+            has finished. After this call all created <see cref="T:GridViewExtensions.IGridFilter"/>s should
+            be in a usable state.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl.CreateGridFilter(System.Windows.Forms.DataGridViewColumn)">
+            <summary>
+            Creates a new instance of <see cref="T:GridViewExtensions.IGridFilter"/> by calling the 
+            <see cref="P:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl.InnerGridFilterFactory"/> and then modifying the default
+            placement.
+            </summary>
+            <param name="column">The <see cref="T:System.Data.DataColumn"/> for which the filter control should be created.</param>
+            <returns>A <see cref="T:GridViewExtensions.IGridFilter"/>.</returns>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl.InnerGridFilterFactory">
+            <summary>
+            Gets and sets the <see cref="T:GridViewExtensions.IGridFilterFactory"/> instance which should
+            be used for creating <see cref="T:GridViewExtensions.IGridFilter"/>s.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl.ControlsMinimumWidth">
+            <summary>
+            Gets and sets the minimum width for the controls. If the panel isn't
+            big enough scrollbars will be created.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl.HorizontalSpacing">
+            <summary>
+            Gets and sets the horizontal space between the labels and controls.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl.VerticalSpacing">
+            <summary>
+            Gets and sets the vertical space between the rows.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl.RightAlignLabels">
+            <summary>
+            Gets and sets whether the labels are aligned to the right or to the left.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl.ShowEmptyGridFilters">
+            <summary>
+            Gets and sets whether EmptyGridFilter instances should be shown.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl.Changed">
+            <summary>
+            Event for notification that the behaviour of this
+            instance has changed.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.GridFilterFactories.LayoutedGridFilterFactoryControl.GridFilterCreated">
+            <summary>
+            Event for notification when a <see cref="T:GridViewExtensions.IGridFilter"/> has been
+            created in order to use it in a specific column and to allow
+            custom modifications to it.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilterFactories.FullTextSearchGridFilterFactoryTextBox">
+            <summary>
+            Implementation of <see cref="T:GridViewExtensions.IGridFilterFactory"/> allowing
+            to search in multiple columns with only one textbox. Without
+            further customization this results in a fulltext-search in the
+            whole grid.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.FullTextSearchGridFilterFactoryTextBox.#ctor">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.FullTextSearchGridFilterFactoryTextBox.BeginGridFilterCreation">
+            <summary>
+            Notifies this instance that the <see cref="T:GridViewExtensions.IGridFilter"/> creation process
+            is being started.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.FullTextSearchGridFilterFactoryTextBox.EndGridFilterCreation">
+            <summary>
+            Notifies this instance that the <see cref="T:GridViewExtensions.IGridFilter"/> creation process
+            has finished. After this call all created <see cref="T:GridViewExtensions.IGridFilter"/>s should
+            be in a usable state.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.FullTextSearchGridFilterFactoryTextBox.CreateGridFilter(System.Windows.Forms.DataGridViewColumn)">
+            <summary>
+            Creates a new instance of <see cref="T:GridViewExtensions.GridFilters.TextGridFilter"/> and always
+            specifies itself as the filter control. As a result all created filters
+            will react upon changes in this instance.
+            </summary>
+            <param name="column">The <see cref="T:System.Data.DataColumn"/> for which the filter control should be created.</param>
+            <returns>A <see cref="T:GridViewExtensions.GridFilters.TextGridFilter"/>.</returns>
+        </member>
+        <member name="E:GridViewExtensions.GridFilterFactories.FullTextSearchGridFilterFactoryTextBox.Changed">
+            <summary>
+            Event for notification that the behaviour of this
+            instance has changed.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.GridFilterFactories.FullTextSearchGridFilterFactoryTextBox.GridFilterCreated">
+            <summary>
+            Event for notification when a <see cref="T:GridViewExtensions.IGridFilter"/> has been
+            created in order to use it in a specific column and to allow
+            custom modifications to it.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilterFactories.DistinctValuesGridFilterFactory">
+            <summary>
+            <see cref="T:GridViewExtensions.IGridFilterFactory"/> implementation which creates a
+            <see cref="T:GridViewExtensions.GridFilters.DistinctValuesGridFilter"/> on every column.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.DistinctValuesGridFilterFactory.#ctor">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterFactories.DistinctValuesGridFilterFactory.CreateGridFilterInternal(System.Windows.Forms.DataGridViewColumn)">
+            <summary>
+            Return always a <see cref="T:GridViewExtensions.GridFilters.DistinctValuesGridFilter"/>. 
+            </summary>
+            <param name="column">The <see cref="T:System.Data.DataColumn"/> for which the filter control should be created.</param>
+            <returns>A <see cref="T:GridViewExtensions.IGridFilter"/>.</returns>
+        </member>
+        <member name="T:GridViewExtensions.GridFilters.NumericGridFilterControl">
+            <summary>
+            A control with a <see cref="P:GridViewExtensions.GridFilters.NumericGridFilterControl.ComboBox"/> and two <see cref="T:System.Windows.Forms.TextBox"/>es
+            needed in the <see cref="T:GridViewExtensions.GridFilters.NumericGridFilter"/>.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NumericGridFilterControl.#ctor">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NumericGridFilterControl.Dispose(System.Boolean)">
+            <summary> 
+            Cleans up.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NumericGridFilterControl.OnResize(System.EventArgs)">
+            <summary>
+            Resizes the contained <see cref="T:System.Windows.Forms.DateTimePicker"/>s so that they
+            have the same width.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NumericGridFilterControl.InitializeComponent">
+            <summary> 
+            Erforderliche Methode für die Designerunterstützung. 
+            Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.GridFilters.NumericGridFilterControl.Changed">
+            <summary>
+            Event firing when either the <see cref="P:GridViewExtensions.GridFilters.NumericGridFilterControl.ComboBox"/> or
+            the <see cref="T:System.Windows.Forms.TextBox"/> has changed.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.NumericGridFilterControl.TextBox1">
+            <summary>
+            Gets the first contained <see cref="T:System.Windows.Forms.TextBox"/> instance.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.NumericGridFilterControl.TextBox2">
+            <summary>
+            Gets the second contained <see cref="T:System.Windows.Forms.TextBox"/> instance.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.NumericGridFilterControl.ComboBox">
+            <summary>
+            Gets the contained <see cref="P:GridViewExtensions.GridFilters.NumericGridFilterControl.ComboBox"/> instance.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFilters.NumericGridFilter">
+            <summary>
+            A <see cref="T:GridViewExtensions.IGridFilter"/> implementation for filtering numeric columns
+            with a <see cref="T:GridViewExtensions.GridFilters.NumericGridFilterControl"/> to control the filter.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NumericGridFilter.#ctor">
+            <summary>
+            Creates a new instance with <see cref="P:GridViewExtensions.GridFilters.GridFilterBase.UseCustomFilterPlacement"/>
+            and <see cref="P:GridViewExtensions.GridFilters.NumericGridFilter.ShowInBetweenOperator"/> set to false.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NumericGridFilter.#ctor(System.Boolean)">
+            <summary>
+            Creates a new instance with <see cref="P:GridViewExtensions.GridFilters.GridFilterBase.UseCustomFilterPlacement"/>
+            set to false.
+            </summary>
+            <param name="showInBetweenOperator">Determines whether the 'in between' operator is available.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NumericGridFilter.#ctor(GridViewExtensions.GridFilters.NumericGridFilterControl)">
+            <summary>
+            Creates a new instance with <see cref="P:GridViewExtensions.GridFilters.GridFilterBase.UseCustomFilterPlacement"/>
+            set to true and not having the 'in between' operator.
+            </summary>
+            <param name="numericGridFilterControl">A <see cref="T:GridViewExtensions.GridFilters.NumericGridFilterControl"/> 
+            instance which should be used by the filter.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NumericGridFilter.#ctor(GridViewExtensions.GridFilters.NumericGridFilterControl,System.Boolean)">
+            <summary>
+            Creates a new instance with <see cref="P:GridViewExtensions.GridFilters.GridFilterBase.UseCustomFilterPlacement"/>
+            set to true and not having the 'in between' operator.
+            </summary>
+            <param name="numericGridFilterControl">A <see cref="T:GridViewExtensions.GridFilters.NumericGridFilterControl"/> 
+            instance which should be used by the filter.</param>
+            <param name="showInBetweenOperator">Determines whether the 'in between' operator is available.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NumericGridFilter.GetFilter(System.String)">
+            <summary>
+            Gets a filter with the current criteria in string representation.
+            If operator '*' is set in the <see cref="T:System.Windows.Forms.ComboBox"/> a text criteria
+            with like will be created.
+            All other operators will do numerical comparisons. If no valid number
+            is entered then all rows will be filtered out.
+            </summary>
+            <param name="columnName">
+            The name of the column for which the criteria should be generated.
+            </param>
+            <returns>A string representing the current filter criteria</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NumericGridFilter.SetFilter(System.String)">
+            <summary>
+            Sets a string which a a previous result of <see cref="M:GridViewExtensions.GridFilters.NumericGridFilter.GetFilter(System.String)"/>
+            in order to configure the <see cref="P:GridViewExtensions.GridFilters.NumericGridFilter.FilterControl"/> to match the
+            given filter criteria.
+            </summary>
+            <param name="filter">filter criteria</param>
+            <returns></returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilters.NumericGridFilter.Clear">
+            <summary>
+            Clears the filter to its initial state.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.NumericGridFilter.ShowInBetweenOperator">
+            <summary>
+            Sets or gets whether the 'in between' operator should be available.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.NumericGridFilter.Text1">
+            <summary>
+            Gets or sets the current text of the first contained <see cref="T:System.Windows.Forms.TextBox"/>.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.NumericGridFilter.Text2">
+            <summary>
+            Gets or sets the current text of the second contained <see cref="T:System.Windows.Forms.TextBox"/>.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.NumericGridFilter.Operator">
+            <summary>
+            Gets or sets the current operator of the contained <see cref="T:System.Windows.Forms.ComboBox"/>.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.NumericGridFilter.FilterControl">
+            <summary>
+            Returns the instance itsself, which contains a <see cref="T:System.Windows.Forms.TextBox"/>
+            and a <see cref="T:System.Windows.Forms.ComboBox"/> to adjust the filter.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilters.NumericGridFilter.HasFilter">
+            <summary>
+            Gets whether a filter is set.
+            True, if the text of the <see cref="T:System.Windows.Forms.TextBox"/> is not empty.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.LogicalOperators">
+            <summary>
+            Logical operators which can be used to determine how the filter
+            criterias are combined
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.LogicalOperators.And">
+            <summary>
+            Logical And
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.LogicalOperators.Or">
+            <summary>
+            Logical Or
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.FilterErrorModes">
+            <summary>
+            Modes which determine the output generated when an error
+            in the builded filter criterias occurs.
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.FilterErrorModes.Off">
+            <summary>
+            No error output at all
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.FilterErrorModes.General">
+            <summary>
+            General error message
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.FilterErrorModes.ExceptionMessage">
+            <summary>
+            Message of the exception that occured
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.FilterErrorModes.StackTrace">
+            <summary>
+            StackTrace of the exception that occured
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.FilterErrorModes.All">
+            <summary>
+            All available output
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.RefreshMode">
+            <summary>
+            Modes which determine when the filter criteria get automatically
+            applied to the contents of the grid.
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.RefreshMode.OnInput">
+            <summary>
+            Filters are regenerated on every user input.
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.RefreshMode.OnEnter">
+            <summary>
+            Filters are regenerated whenever the user presses Enter while
+            the focus is in one of the filter controls.
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.RefreshMode.OnLeave">
+            <summary>
+            Filters are regenerated whenever one of the filter controls
+            looses input focus.
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.RefreshMode.OnEnterOrLeave">
+            <summary>
+            Filters are regenerated whenever one of the filter controls
+            looses input focus or the user presses Enter while
+            the focus is in one of the filter controls.
+            </summary>
+        </member>
+        <member name="F:GridViewExtensions.RefreshMode.Off">
+            <summary>
+            No automatic filter generation.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GridFiltersControl">
+            <summary>
+            A control where all controls all placed which are necessary for
+            extending a grid for filtering.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFiltersControl.#ctor">
+            <summary>
+            Creates a new instance
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFiltersControl.InitializeComponent">
+            <summary> 
+            Erforderliche Methode f|r die Designerunterst|tzung. 
+            Der Inhalt der Methode darf nicht mit dem Code-Editor gedndert werden.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFiltersControl.Dispose(System.Boolean)">
+            <summary> 
+            Die verwendeten Ressourcen bereinigen.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFiltersControl.OnResize(System.EventArgs)">
+            <summary>
+            Initiates recalculation for the positions of the filter GUI elements.
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFiltersControl.OnRightToLeftChanged(System.EventArgs)">
+            <summary>
+            Initiates recalculation for the positions of the filter GUI elements.
+            </summary>
+            <param name="e">Event data</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFiltersControl.ClearFilters">
+            <summary>
+            Clears all filters to initial state.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFiltersControl.SetFilters(System.String[])">
+            <summary>
+            Sets all filters to the specified values.
+            The values must be in order of the column styles in the current view.
+            This function should normally be used with data previously coming
+            from the <see cref="M:GridViewExtensions.GridFiltersControl.GetFilters"/> function.
+            </summary>
+            <param name="filters">filters to set</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFiltersControl.GetFilters">
+            <summary>
+            Gets all filters currently set
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFiltersControl.RefreshFilters">
+            <summary>
+            Refreshes the filter criteria to match the current contents of the associated
+            filter controls.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFiltersControl.GetGridFilters">
+            <summary>
+            Gets all currently set <see cref="T:GridViewExtensions.IGridFilter"/>s.
+            </summary>
+            <returns>Collection of <see cref="T:GridViewExtensions.IGridFilter"/>s.</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFiltersControl.GetViewFromDataSource(System.Object,System.String)">
+            <summary>
+            Tries to resolve a <see cref="T:System.ComponentModel.IBindingListView"/> from a given data source.
+            </summary>
+            <param name="dataSource"></param>
+            <param name="dataMember"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFiltersControl.RecreateGridFilters">
+            <summary>
+            Initiates a recalculation of the needed filter GUI elements and their positions.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFiltersControl.OnBeforeFiltersChanging(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.GridFiltersControl.BeforeFiltersChanging"/> event.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFiltersControl.OnAfterFiltersChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.GridFiltersControl.AfterFiltersChanged"/> event.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFiltersControl.OnGridFilterBound(GridViewExtensions.GridFilterEventArgs)">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.GridFiltersControl.GridFilterBound"/> event.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFiltersControl.OnGridFilterUnbound(GridViewExtensions.GridFilterEventArgs)">
+            <summary>
+            Raises the <see cref="E:GridViewExtensions.GridFiltersControl.GridFilterUnbound"/> event.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="E:GridViewExtensions.GridFiltersControl.AfterFiltersChanged">
+            <summary>
+            Event, which gets fired whenever the filter criteria has been changed.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.GridFiltersControl.BeforeFiltersChanging">
+            <summary>
+            Event, which gets fired whenever the filter criteria are going to be changed.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.GridFiltersControl.GridFilterBound">
+            <summary>
+            Event, which gets fired whenever an <see cref="T:GridViewExtensions.IGridFilter"/> has been bound
+            and thus added to this instance.
+            </summary>
+        </member>
+        <member name="E:GridViewExtensions.GridFiltersControl.GridFilterUnbound">
+            <summary>
+            Event, which gets fired whenever an <see cref="T:GridViewExtensions.IGridFilter"/> has been unbound
+            and thus removed to this instance.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFiltersControl.DataGridView">
+            <summary>
+            Gets and sets the <see cref="P:GridViewExtensions.GridFiltersControl.DataGridView"/> instance to use.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFiltersControl.KeepFilters">
+            <summary>
+            Gets and sets whether filters are kept while switching between different tables.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFiltersControl.AutoRefreshMode">
+            <summary>
+            Gets and sets whether the filter criteria is automatically refreshed when
+            changes are made to the filter controls. If set to false then a call to
+            <see cref="M:GridViewExtensions.GridFiltersControl.RefreshFilters"/> is needed to manually refresh the criteria.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFiltersControl.FilterText">
+            <summary>
+            Gets and sets the text for the filter label.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFiltersControl.FilterFactory">
+            <summary>
+            Gets and sets the <see cref="T:GridViewExtensions.IGridFilterFactory"/> used to generate the filter GUI.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFiltersControl.Operator">
+            <summary>
+            The selected operator to combine the filter criterias.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFiltersControl.FilterTextVisible">
+            <summary>
+            Gets and sets whether the filter label should be visible.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFiltersControl.MessageErrorMode">
+            <summary>
+            Gets and sets what information is showed to the user
+            if an error in the builded filter criterias occurs.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFiltersControl.ConsoleErrorMode">
+            <summary>
+            Gets and sets what information is showed to the user
+            if an error in the builded filter criterias occurs.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFiltersControl.BaseFilters">
+            <summary>
+            Gets a modifyable collection which maps <see cref="P:System.Data.DataTable.TableName"/>s
+            to base filter strings which are applied in front of the automatically
+            created filter.
+            </summary>
+            <remarks>
+            The grid contents is not automatically refreshed when modifying this 
+            collection. A call to <see cref="M:GridViewExtensions.GridFiltersControl.RefreshFilters"/> is needed for this.
+            </remarks>
+        </member>
+        <member name="P:GridViewExtensions.GridFiltersControl.BaseFilterOperator">
+            <summary>
+            Gets or sets which operator should be used to combine the base filter
+            with the automatically created filters.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFiltersControl.BaseFilterEnabled">
+            <summary>
+            Gets or sets whether base filters should be used when refreshing
+            the filter criteria. Setting it to false will disable the functionality
+            while still keeping the base filter strings in the <see cref="P:GridViewExtensions.GridFiltersControl.BaseFilters"/>
+            collection intact.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFiltersControl.CurrentTableBaseFilter">
+            <summary>
+            Gets or sets the currently used base filter. Internally it adjusts the
+            <see cref="P:GridViewExtensions.GridFiltersControl.BaseFilters"/> collection with the given value and the current
+            <see cref="P:System.Data.DataTable.TableName"/> and also initiates a refresh.
+            </summary>
+        </member>
+        <member name="T:GridViewExtensions.GenericComparer">
+            <summary>
+            Implementation of the <see cref="T:System.Collections.IComparer"/> interface which
+            compares according to a given <see cref="T:System.ComponentModel.ListSortDescriptionCollection"/>.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GenericComparer.#ctor(System.ComponentModel.ListSortDescriptionCollection)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="sortDescriptions">
+            The <see cref="T:System.ComponentModel.ListSortDescriptionCollection"/> which should be
+            used as the bassi for comparison.
+            </param>
+        </member>
+        <member name="M:GridViewExtensions.GenericComparer.Compare(System.Object,System.Object)">
+            <summary>
+            Compares two objects and returns a value indicating whether one is less 
+            than, equal to, or greater than the other.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns></returns>
+        </member>
+        <member name="T:GridViewExtensions.GridFilterCollection">
+            <summary>
+            Typesafe collection of <see cref="T:GridViewExtensions.IGridFilter"/>s.
+            </summary>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterCollection.#ctor(System.Collections.IList,System.Collections.Hashtable)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="columns">List of <see cref="T:System.Windows.Forms.DataGridViewColumn"/>s which are associated with <see cref="T:GridViewExtensions.IGridFilter"/>s.</param>
+            <param name="columnsToGridFiltersHash">Mapping between <see cref="T:System.Windows.Forms.DataGridViewColumn"/>s and <see cref="T:GridViewExtensions.IGridFilter"/>s.</param>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterCollection.Contains(GridViewExtensions.IGridFilter)">
+            <summary>
+            Determines whether a given <see cref="T:GridViewExtensions.IGridFilter"/> is contained in this instance.
+            </summary>
+            <param name="gridFilter"><see cref="T:GridViewExtensions.IGridFilter"/> to be checked.</param>
+            <returns>True if <see cref="T:GridViewExtensions.IGridFilter"/> is contained in this instance otherwise False.</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterCollection.GetByName(System.String)">
+            <summary>
+            Gets a <see cref="T:GridViewExtensions.IGridFilter"/> which is associated with a <see cref="T:System.Windows.Forms.DataGridViewColumn"/>
+            with the specified <see cref="P:System.Windows.Forms.DataGridViewColumn.Name"/>.
+            </summary>
+            <param name="name"><see cref="P:System.Windows.Forms.DataGridViewColumn.Name"/></param>
+            <returns>An <see cref="T:GridViewExtensions.IGridFilter"/> or null if no appropriate was found.</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterCollection.GetByHeaderText(System.String)">
+            <summary>
+            Gets a <see cref="T:GridViewExtensions.IGridFilter"/> which is associated with a <see cref="T:System.Windows.Forms.DataGridViewColumn"/>
+            with the specified <see cref="P:System.Windows.Forms.DataGridViewColumn.HeaderText"/>.
+            </summary>
+            <param name="headerText"><see cref="P:System.Windows.Forms.DataGridViewColumn.HeaderText"/></param>
+            <returns>An <see cref="T:GridViewExtensions.IGridFilter"/> or null if no appropriate was found.</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterCollection.GetByDataPropertyName(System.String)">
+            <summary>
+            Gets a <see cref="T:GridViewExtensions.IGridFilter"/> which is associated with a <see cref="T:System.Windows.Forms.DataGridViewColumn"/>
+            with the specified <see cref="P:System.Windows.Forms.DataGridViewColumn.DataPropertyName"/>.
+            </summary>
+            <param name="dataPropertyName"><see cref="P:System.Windows.Forms.DataGridViewColumn.DataPropertyName"/></param>
+            <returns>An <see cref="T:GridViewExtensions.IGridFilter"/> or null if no appropriate was found.</returns>
+        </member>
+        <member name="M:GridViewExtensions.GridFilterCollection.FilterByGridFilterType(System.Type,System.Boolean)">
+            <summary>
+            Creates a filtered list which only contains <see cref="T:GridViewExtensions.IGridFilter"/>s of the specified type.
+            </summary>
+            <param name="dataType">Type by which should be filtered.</param>
+            <param name="exactMatch">Defines whether the types must match exactly
+            (otherwise inheriting types will also be returned).</param>
+            <returns>Collection of matching <see cref="T:GridViewExtensions.IGridFilter"/>s.</returns>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterCollection.Item(System.Int32)">
+            <summary>
+            Gets the element at the specified index.
+            </summary>
+        </member>
+        <member name="P:GridViewExtensions.GridFilterCollection.Item(System.Windows.Forms.DataGridViewColumn)">
+            <summary>
+            Gets the <see cref="T:GridViewExtensions.IGridFilter"/> which is associated with the given <see cref="T:System.Windows.Forms.DataGridViewColumn"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

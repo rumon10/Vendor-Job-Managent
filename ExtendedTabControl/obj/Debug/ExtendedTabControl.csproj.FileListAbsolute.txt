@@ -1,0 +1,14 @@
+C:\Users\Rumon\documents\visual studio 2010\Projects\RTabControl\ExtendedTabControl\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Rumon\documents\visual studio 2010\Projects\RTabControl\ExtendedTabControl\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Rumon\documents\visual studio 2010\Projects\RTabControl\ExtendedTabControl\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Rumon\documents\visual studio 2010\Projects\RTabControl\ExtendedTabControl\obj\Debug\ExtendedTabControl.Resources.resources
+C:\Users\Rumon\documents\visual studio 2010\Projects\RTabControl\ExtendedTabControl\bin\Debug\ExtendedTabControl.dll
+C:\Users\Rumon\documents\visual studio 2010\Projects\RTabControl\ExtendedTabControl\bin\Debug\ExtendedTabControl.pdb
+C:\Users\Rumon\documents\visual studio 2010\Projects\RTabControl\ExtendedTabControl\obj\Debug\ExtendedTabControl.dll
+C:\Users\Rumon\documents\visual studio 2010\Projects\RTabControl\ExtendedTabControl\obj\Debug\ExtendedTabControl.pdb
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\ExtendedTabControl\bin\Debug\ExtendedTabControl.dll
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\ExtendedTabControl\bin\Debug\ExtendedTabControl.pdb
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\ExtendedTabControl\obj\Debug\ExtendedTabControl.Resources.resources
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\ExtendedTabControl\obj\Debug\ExtendedTabControl.dll
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\ExtendedTabControl\obj\Debug\ExtendedTabControl.pdb
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\ExtendedTabControl\obj\Debug\ExtendedTabControl.csproj.GenerateResource.Cache

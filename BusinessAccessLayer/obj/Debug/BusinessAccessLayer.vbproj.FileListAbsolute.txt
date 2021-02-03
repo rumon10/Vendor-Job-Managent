@@ -1,0 +1,152 @@
+c:\users\rumon\documents\visual studio 2010\Projects\Restaurant Management System\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.dll
+c:\users\rumon\documents\visual studio 2010\Projects\Restaurant Management System\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.pdb
+c:\users\rumon\documents\visual studio 2010\Projects\Restaurant Management System\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.xml
+c:\users\rumon\documents\visual studio 2010\Projects\Restaurant Management System\BusinessAccessLayer\obj\Debug\ResolveAssemblyReference.cache
+c:\users\rumon\documents\visual studio 2010\Projects\Restaurant Management System\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.Resources.resources
+c:\users\rumon\documents\visual studio 2010\Projects\Restaurant Management System\BusinessAccessLayer\obj\Debug\GenerateResource.read.1.tlog
+c:\users\rumon\documents\visual studio 2010\Projects\Restaurant Management System\BusinessAccessLayer\obj\Debug\GenerateResource.write.1.tlog
+c:\users\rumon\documents\visual studio 2010\Projects\Restaurant Management System\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.dll
+c:\users\rumon\documents\visual studio 2010\Projects\Restaurant Management System\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.xml
+c:\users\rumon\documents\visual studio 2010\Projects\Restaurant Management System\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.pdb
+c:\users\rumon\documents\visual studio 2010\Projects\Restaurant Management System\BusinessAccessLayer\bin\Debug\DataAccessLayer.dll
+c:\users\rumon\documents\visual studio 2010\Projects\Restaurant Management System\BusinessAccessLayer\bin\Debug\DataAccessLayer.pdb
+c:\users\rumon\documents\visual studio 2010\Projects\Restaurant Management System\BusinessAccessLayer\bin\Debug\DataAccessLayer.xml
+E:\Odesk\Restrunant POS\Restaurant Management System\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.dll
+E:\Odesk\Restrunant POS\Restaurant Management System\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.pdb
+E:\Odesk\Restrunant POS\Restaurant Management System\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.xml
+E:\Odesk\Restrunant POS\Restaurant Management System\BusinessAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\Odesk\Restrunant POS\Restaurant Management System\BusinessAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\Odesk\Restrunant POS\Restaurant Management System\BusinessAccessLayer\bin\Debug\DataAccessLayer.xml
+E:\Odesk\Restrunant POS\Restaurant Management System\BusinessAccessLayer\obj\Debug\ResolveAssemblyReference.cache
+E:\Odesk\Restrunant POS\Restaurant Management System\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.Resources.resources
+E:\Odesk\Restrunant POS\Restaurant Management System\BusinessAccessLayer\obj\Debug\GenerateResource.read.1.tlog
+E:\Odesk\Restrunant POS\Restaurant Management System\BusinessAccessLayer\obj\Debug\GenerateResource.write.1.tlog
+E:\Odesk\Restrunant POS\Restaurant Management System\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.dll
+E:\Odesk\Restrunant POS\Restaurant Management System\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.xml
+E:\Odesk\Restrunant POS\Restaurant Management System\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.pdb
+C:\Users\Rumon\Desktop\Restaurant Management System\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.dll
+C:\Users\Rumon\Desktop\Restaurant Management System\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.pdb
+C:\Users\Rumon\Desktop\Restaurant Management System\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.xml
+C:\Users\Rumon\Desktop\Restaurant Management System\BusinessAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Rumon\Desktop\Restaurant Management System\BusinessAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Rumon\Desktop\Restaurant Management System\BusinessAccessLayer\bin\Debug\DataAccessLayer.xml
+C:\Users\Rumon\Desktop\Restaurant Management System\BusinessAccessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Rumon\Desktop\Restaurant Management System\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.Resources.resources
+C:\Users\Rumon\Desktop\Restaurant Management System\BusinessAccessLayer\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Rumon\Desktop\Restaurant Management System\BusinessAccessLayer\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Rumon\Desktop\Restaurant Management System\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.dll
+C:\Users\Rumon\Desktop\Restaurant Management System\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.xml
+C:\Users\Rumon\Desktop\Restaurant Management System\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.pdb
+C:\Users\Rumon\Desktop\Easy Inventory Manager\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.dll
+C:\Users\Rumon\Desktop\Easy Inventory Manager\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.pdb
+C:\Users\Rumon\Desktop\Easy Inventory Manager\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.xml
+C:\Users\Rumon\Desktop\Easy Inventory Manager\BusinessAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Rumon\Desktop\Easy Inventory Manager\BusinessAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Rumon\Desktop\Easy Inventory Manager\BusinessAccessLayer\bin\Debug\DataAccessLayer.xml
+C:\Users\Rumon\Desktop\Easy Inventory Manager\BusinessAccessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Rumon\Desktop\Easy Inventory Manager\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.Resources.resources
+C:\Users\Rumon\Desktop\Easy Inventory Manager\BusinessAccessLayer\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Rumon\Desktop\Easy Inventory Manager\BusinessAccessLayer\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Rumon\Desktop\Easy Inventory Manager\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.dll
+C:\Users\Rumon\Desktop\Easy Inventory Manager\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.xml
+C:\Users\Rumon\Desktop\Easy Inventory Manager\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.pdb
+E:\Odesk\Driver Job Management System\Vendor Management Version-2\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.dll
+E:\Odesk\Driver Job Management System\Vendor Management Version-2\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.pdb
+E:\Odesk\Driver Job Management System\Vendor Management Version-2\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.xml
+E:\Odesk\Driver Job Management System\Vendor Management Version-2\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\Odesk\Driver Job Management System\Vendor Management Version-2\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\Odesk\Driver Job Management System\Vendor Management Version-2\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.xml
+E:\Odesk\Driver Job Management System\Vendor Management Version-2\Vendor Job Managent\BusinessAccessLayer\obj\Debug\ResolveAssemblyReference.cache
+E:\Odesk\Driver Job Management System\Vendor Management Version-2\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.Resources.resources
+E:\Odesk\Driver Job Management System\Vendor Management Version-2\Vendor Job Managent\BusinessAccessLayer\obj\Debug\GenerateResource.read.1.tlog
+E:\Odesk\Driver Job Management System\Vendor Management Version-2\Vendor Job Managent\BusinessAccessLayer\obj\Debug\GenerateResource.write.1.tlog
+E:\Odesk\Driver Job Management System\Vendor Management Version-2\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.dll
+E:\Odesk\Driver Job Management System\Vendor Management Version-2\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.xml
+E:\Odesk\Driver Job Management System\Vendor Management Version-2\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.pdb
+E:\Odesk\Driver Job Management System\Vendor Management Version-3\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.dll
+E:\Odesk\Driver Job Management System\Vendor Management Version-3\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.pdb
+E:\Odesk\Driver Job Management System\Vendor Management Version-3\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.xml
+E:\Odesk\Driver Job Management System\Vendor Management Version-3\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\Odesk\Driver Job Management System\Vendor Management Version-3\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\Odesk\Driver Job Management System\Vendor Management Version-3\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.xml
+E:\Odesk\Driver Job Management System\Vendor Management Version-3\Vendor Job Managent\BusinessAccessLayer\obj\Debug\ResolveAssemblyReference.cache
+E:\Odesk\Driver Job Management System\Vendor Management Version-3\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.Resources.resources
+E:\Odesk\Driver Job Management System\Vendor Management Version-3\Vendor Job Managent\BusinessAccessLayer\obj\Debug\GenerateResource.read.1.tlog
+E:\Odesk\Driver Job Management System\Vendor Management Version-3\Vendor Job Managent\BusinessAccessLayer\obj\Debug\GenerateResource.write.1.tlog
+E:\Odesk\Driver Job Management System\Vendor Management Version-3\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.dll
+E:\Odesk\Driver Job Management System\Vendor Management Version-3\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.xml
+E:\Odesk\Driver Job Management System\Vendor Management Version-3\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.pdb
+E:\Odesk\Driver Job Management System\Vendor Management System Version-3 (04.01.2013)\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.dll
+E:\Odesk\Driver Job Management System\Vendor Management System Version-3 (04.01.2013)\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.pdb
+E:\Odesk\Driver Job Management System\Vendor Management System Version-3 (04.01.2013)\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.xml
+E:\Odesk\Driver Job Management System\Vendor Management System Version-3 (04.01.2013)\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\Odesk\Driver Job Management System\Vendor Management System Version-3 (04.01.2013)\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\Odesk\Driver Job Management System\Vendor Management System Version-3 (04.01.2013)\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.xml
+E:\Odesk\Driver Job Management System\Vendor Management System Version-3 (04.01.2013)\Vendor Job Managent\BusinessAccessLayer\obj\Debug\ResolveAssemblyReference.cache
+E:\Odesk\Driver Job Management System\Vendor Management System Version-3 (04.01.2013)\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.Resources.resources
+E:\Odesk\Driver Job Management System\Vendor Management System Version-3 (04.01.2013)\Vendor Job Managent\BusinessAccessLayer\obj\Debug\GenerateResource.read.1.tlog
+E:\Odesk\Driver Job Management System\Vendor Management System Version-3 (04.01.2013)\Vendor Job Managent\BusinessAccessLayer\obj\Debug\GenerateResource.write.1.tlog
+E:\Odesk\Driver Job Management System\Vendor Management System Version-3 (04.01.2013)\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.dll
+E:\Odesk\Driver Job Management System\Vendor Management System Version-3 (04.01.2013)\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.xml
+E:\Odesk\Driver Job Management System\Vendor Management System Version-3 (04.01.2013)\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.pdb
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.dll
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.pdb
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.xml
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.xml
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.Resources.resources
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.dll
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.xml
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.pdb
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.vbprojResolveAssemblyReference.cache
+E:\Odesk\Driver Job Management System\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.vbproj.GenerateResource.Cache
+E:\Odesk\Driver Job Management System\Version-5\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.dll
+E:\Odesk\Driver Job Management System\Version-5\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.pdb
+E:\Odesk\Driver Job Management System\Version-5\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.xml
+E:\Odesk\Driver Job Management System\Version-5\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\Odesk\Driver Job Management System\Version-5\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\Odesk\Driver Job Management System\Version-5\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.xml
+E:\Odesk\Driver Job Management System\Version-5\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.vbprojResolveAssemblyReference.cache
+E:\Odesk\Driver Job Management System\Version-5\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.Resources.resources
+E:\Odesk\Driver Job Management System\Version-5\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.vbproj.GenerateResource.Cache
+E:\Odesk\Driver Job Management System\Version-5\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.dll
+E:\Odesk\Driver Job Management System\Version-5\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.xml
+E:\Odesk\Driver Job Management System\Version-5\Vendor Management System Version 5.0\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.pdb
+E:\Odesk\Driver Job Management System\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.dll
+E:\Odesk\Driver Job Management System\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.pdb
+E:\Odesk\Driver Job Management System\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.xml
+E:\Odesk\Driver Job Management System\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\Odesk\Driver Job Management System\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\Odesk\Driver Job Management System\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.xml
+E:\Odesk\Driver Job Management System\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.vbprojResolveAssemblyReference.cache
+E:\Odesk\Driver Job Management System\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.Resources.resources
+E:\Odesk\Driver Job Management System\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.vbproj.GenerateResource.Cache
+E:\Odesk\Driver Job Management System\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.dll
+E:\Odesk\Driver Job Management System\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.xml
+E:\Odesk\Driver Job Management System\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.pdb
+C:\Users\rc1\Desktop\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\rc1\Desktop\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.Resources.resources
+C:\Users\rc1\Desktop\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\rc1\Desktop\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\rc1\Desktop\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.dll
+C:\Users\rc1\Desktop\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.xml
+C:\Users\rc1\Desktop\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.pdb
+C:\Users\rc1\Desktop\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.dll
+C:\Users\rc1\Desktop\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.pdb
+C:\Users\rc1\Desktop\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.xml
+C:\Users\rc1\Desktop\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\rc1\Desktop\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\rc1\Desktop\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.xml
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.dll
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.pdb
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\BusinessAccessLayer.xml
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\bin\Debug\DataAccessLayer.xml
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.vbprojResolveAssemblyReference.cache
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.Resources.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.vbproj.GenerateResource.Cache
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.dll
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.xml
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\BusinessAccessLayer\obj\Debug\BusinessAccessLayer.pdb

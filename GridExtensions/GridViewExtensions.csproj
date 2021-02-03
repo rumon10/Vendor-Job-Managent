@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E5247765-0134-4714-A110-64D571FBF636}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>GridViewExtensions</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GridViewExtensions</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>GridViewExtensions.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>GridViewExtensions.xml</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BindingListView.cs" />
+    <Compile Include="DataFilter.cs" />
+    <Compile Include="DataGridFilterExtender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FilterableDataGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GenericComparer.cs" />
+    <Compile Include="GridFilterCollection.cs" />
+    <Compile Include="GridFilterEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridFilterFactories\DefaultGridFilterFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridFilterFactories\DistinctValuesGridFilterFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridFilterFactories\FullTextSearchGridFilterFactoryTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GridFilterFactories\GridFilterFactoryBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridFilterFactories\LayoutedGridFilterFactoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GridFilterFactories\LayoutedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GridFilterFactories\NullGridFilterFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridFiltersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GridFilters\BoolGridFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridFilters\DateGridFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridFilters\DateGridFilterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GridFilters\DistinctValuesGridFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridFilters\EmptyGridFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridFilters\EnumerationGridFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridFilters\EnumerationSources\IEnumerationSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridFilters\EnumerationSources\IntStringMapEnumerationSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridFilters\EnumerationSources\TypeEnumerationSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridFilters\GridFilterBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridFilters\NullGridFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridFilters\NumericGridFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GridFilters\NumericGridFilterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GridFilters\TextGridFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IGridFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IGridFilterFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="DataGridFilterExtender.resx">
+      <DependentUpon>DataGridFilterExtender.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilterableDataGrid.resx">
+      <DependentUpon>FilterableDataGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridFilterFactories\FullTextSearchGridFilterFactoryTextBox.resx">
+      <DependentUpon>FullTextSearchGridFilterFactoryTextBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridFilterFactories\LayoutedGridFilterFactoryControl.resx">
+      <DependentUpon>LayoutedGridFilterFactoryControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridFilterFactories\LayoutedPanel.resx">
+      <DependentUpon>LayoutedPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridFiltersControl.resx">
+      <DependentUpon>GridFiltersControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridFilters\DateGridFilterControl.resx">
+      <DependentUpon>DateGridFilterControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridFilters\NumericGridFilterControl.resx">
+      <DependentUpon>NumericGridFilterControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

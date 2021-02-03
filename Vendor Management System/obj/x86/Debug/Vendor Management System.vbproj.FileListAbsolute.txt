@@ -1,0 +1,41 @@
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\Vendor Management System.vbproj.ResolveComReference.cache
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\bin\Debug\Vendor Management System.exe
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\bin\Debug\Vendor Management System.pdb
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\bin\Debug\Vendor Management System.xml
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\bin\Debug\BusinessAccessLayer.dll
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\bin\Debug\GridViewExtensions.dll
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\bin\Debug\DataAccessLayer.dll
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\bin\Debug\BusinessAccessLayer.pdb
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\bin\Debug\BusinessAccessLayer.xml
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\bin\Debug\GridViewExtensions.pdb
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\bin\Debug\GridViewExtensions.xml
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\bin\Debug\DataAccessLayer.pdb
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\bin\Debug\DataAccessLayer.xml
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\Vendor Management System.vbprojResolveAssemblyReference.cache
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.Acknowledgement.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.AcknowledgementDisplay.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.ApprovedDisputedJob.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.Backup.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.ChangedisputedJobToApproved.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.fromChangePassword.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.fromUserCreation.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.JobProcessing.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.JobRejectsReaon.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.LockScreen.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.MessageBoxUser.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.Login.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.Mainform.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.Resources.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.Logout.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.VendorInformation.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.VendorJobHistory.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.VendorJobLookup.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\VendorManagementSystem.VendorJobs.resources
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\Vendor Management System.vbproj.GenerateResource.Cache
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\Vendor Management System.exe
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\Vendor Management System.xml
+E:\Odesk\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\Vendor Management System.pdb
+C:\Odesk Projects\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\Vendor Management System.vbproj.ResolveComReference.cache
+C:\Odesk Projects\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\Vendor Management System.exe
+C:\Odesk Projects\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\Vendor Management System.xml
+C:\Odesk Projects\Driver Job Management System\version-6\version-6\version-6\Vendor Job Managent\Vendor Management System\obj\x86\Debug\Vendor Management System.pdb
